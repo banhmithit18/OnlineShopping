@@ -135,10 +135,11 @@ namespace WebAPI.Controllers
                     throw;
                 }
             }
-            return NoContent();
 
+            return NoContent();
         }
-        [HttpPut("Active/{id}")]
+
+        [HttpPut("Disable/{id}")]
         public async Task<IActionResult> DisableProduct(int id)
         {
 
@@ -161,9 +162,8 @@ namespace WebAPI.Controllers
                     throw;
                 }
             }
+
             return NoContent();
-
-
         }
         private bool ProductExists(int id)
         {

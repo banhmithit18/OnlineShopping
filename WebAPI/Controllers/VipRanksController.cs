@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
             return NoContent();
         }
         [HttpPut("Active/{id}")]
-        public async Task<IActionResult> ActiveType(int id)
+        public async Task<IActionResult> ActiveVipRank(int id)
         {
 
 
@@ -101,8 +101,9 @@ namespace WebAPI.Controllers
 
             return NoContent();
         }
-        [HttpPut("Active/{id}")]
-        public async Task<IActionResult> DisableType(int id)
+
+        [HttpPut("Disable/{id}")]
+        public async Task<IActionResult> DisableVipRank(int id)
         {
 
 

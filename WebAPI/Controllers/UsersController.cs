@@ -108,7 +108,8 @@ namespace WebAPI.Controllers
 
             return NoContent();
         }
-        [HttpPut("Active/{id}")]
+
+        [HttpPut("Disable/{id}")]
         public async Task<IActionResult> DisableUser(int id)
         {
 
