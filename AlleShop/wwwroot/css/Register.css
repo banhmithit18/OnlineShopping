@@ -1,0 +1,324 @@
+﻿#main {
+    width: 840px;
+    height: 650px;
+    background-color: rgba(245,245,245,0.9);
+    margin-top: 140px;
+    margin-left: 240px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: down;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+.menu {
+    margin-top: 5px;
+    margin-left: 360px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 100;
+    color: darkgrey;
+}
+.inputone {
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.inputs {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 1px solid #a5a5a5;
+    outline: none;
+    background: none;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    width: 200px;
+    height: 25px;
+    margin-bottom: 20px;
+    color: #a5a5a5;
+}
+
+.textone {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 70px;
+}
+
+.textage {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 85px;
+}
+
+.textphonenumber {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 60px;
+}
+
+.textgender {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 80px;
+}
+#gender {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    outline: none;
+    background: none;
+    width: 100px;
+    height: 20px;
+    border-bottom: 1px solid #a5a5a5;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #808080;
+    font-size: 13px;
+}
+
+.textpassword {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 70px;
+}
+.inputcorfirm {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 1px solid #a5a5a5;
+    outline: none;
+    background: none;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    width: 200px;
+    height: 25px;
+    margin-top: 16px;
+    color: #a5a5a5;
+}
+.inputtwo {
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 200px;
+}
+.textadd2 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 60px;
+}
+
+.texadd1 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 60px;
+}
+
+.textmail {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 80px;
+}
+.textconfirm {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: #808080;
+    margin-left: 50px;
+}
+.button {
+    margin-top: 30px;
+    margin-left: 370px;
+    text-align: center;
+    text-decoration: none;
+}
+.buttonsigin {
+    width: 180px;
+    height: 35px;
+    margin-left: -60px;
+    background-color: black;
+    text-align: center;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    border: 1px solid #a5a5a5;
+    transition: background-color 0.5s;
+}
+    .buttonsigin:hover {
+        background-color: #a5a5a5;
+        opacity: 0.9;
+        color: white;
+        border: 1px solid #353839;
+    }
+.line1 {
+    width: 70px;
+    margin-top: -30px;
+    margin-left: 320px;
+}
+.Or {
+    width: 50px;
+    height: 20px;
+    color: #808080;
+    margin-top: -24px;
+    font-size: 13px;
+}
+.line2 {
+    width: 70px;
+    height: 20px;
+    margin-left: 435px;
+    margin-top: -61px;
+}
+.signintext {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    color: #808080;
+    margin-top: -50px;
+    margin-left: 310px;
+}
+
+.sigins {
+    margin-top: -80px;
+    margin-left: 440px;
+}
+
+.textsigin {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+    .textsigin:hover {
+        color: #808080;
+    }
+@keyframes down {
+    from {
+        margin-top: 10px;
+    }
+
+    to {
+        margin-top: 140px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    @keyframes down {
+        from {
+            margin-top: 5px;
+        }
+
+        to {
+            margin-top: 40px;
+        }
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .signintext {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-weight: 100;
+        font-size: 15px;
+        color: #808080;
+        margin-top: -40px;
+        margin-left: 310px;
+    }
+    .sigins {
+        margin-top: -64px;
+        margin-left: 440px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .line2 {
+        width: 70px;
+        height: 20px;
+        margin-left: 435px;
+        margin-top: -55px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .Or {
+        width: 50px;
+        height: 20px;
+        color: #808080;
+        margin-top: -15px;
+        font-size: 13px;
+        margin-left:-9px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .line1 {
+        width: 70px;
+        margin-top: -20px;
+        margin-left: 330px;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .button {
+        margin-top: -5px;
+        margin-left: 370px;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+    @media only screen and (max-width: 1366px) {
+        .inputtwo {
+            width: 300px;
+            margin-top: -20px;
+            margin-left: 200px;
+        }
+    }
+
+    @media only screen and (max-width: 1366px) {
+        .inputone {
+            width: 300px;
+            margin-top: -20px;
+            margin-left: 40px;
+        }
+    }
+
+    @media only screen and (max-width: 1366px) {
+        .menu {
+            margin-top: 10px;
+            margin-left: 360px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: 100;
+            color: darkgrey;
+        }
+    }
+
+    @media only screen and (max-width: 1366px) {
+        #main {
+            width: 840px;
+            height: 550px;
+            background-color: rgba(245,245,245,0.9);
+            margin-top: 40px;
+            margin-left: 137px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            animation-name: down;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+        }
+    }

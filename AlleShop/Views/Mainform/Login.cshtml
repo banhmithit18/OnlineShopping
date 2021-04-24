@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layoutmain.cshtml";
+}
+<link href="~/css/Login.css" rel="stylesheet" />
+<div class="container">
+    <div class="row" id="main">
+         <div class="menu">
+                <div class="title">
+                    A l l e
+                </div>
+                <form action="/" method="post">
+                    <div class="inputs">
+                        <div class="text">Username</div>
+                        <input class="input" name="username" type="text" />
+                        <div class="text">Password</div>
+                        <input class="input" name="password" type="password" />
+                    </div>
+                    <div class="button">
+                        <button class="buttonsign">
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+                <div class="line1">
+                    <hr class="lineone" />
+                </div>
+                <div class="or">
+                    OR
+                </div>
+                <div class="line2">
+                    <hr class="lineone" />
+                </div>
+                <div class="texttwo">
+                    Don't have an account?
+
+                </div>
+                <div class="signup">
+                    <a class="signups" href="@Url.Action("Register")">Sign up</a>
+                </div>
+            </div>
+    </div>
+</div>
+
