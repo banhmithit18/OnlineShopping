@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAPI.ModelsAdmin;
 
 namespace WebAPI.Models
 {
@@ -52,7 +51,7 @@ namespace WebAPI.Models
 
         [Column("UserID",TypeName ="int")]
         public int UserID { get; set; }
-
-        public ICollection<Users> Users { get; set; }
+        [ForeignKey("UserID")]
+        public Users Users { get; set; }
     }
 }

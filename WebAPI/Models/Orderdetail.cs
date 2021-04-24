@@ -18,10 +18,10 @@ namespace WebAPI.Models
         [ForeignKey("OrderID")]
         public Orders Orders { get; set; }
         public int OrderID { get; set; }
-        [Column("ProductID",TypeName ="int")]
-        [ForeignKey("ProductID")]
-        public Product Products { get; set; }
-        public int ProductID { get; set; }
+        [Column("ProductInfoID",TypeName ="int")]
+        [ForeignKey("ProductInfoID")]
+        public ProductInfo ProductInfos { get; set; }
+        public int ProductInfoID { get; set; }
         [Column("Price",TypeName ="float")]
         public float Price { get; set; }
         [Column("Quantity",TypeName ="int")]
