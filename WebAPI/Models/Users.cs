@@ -13,8 +13,7 @@ namespace WebAPI.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("UserID",TypeName ="int")]
-        [ForeignKey("UserID")]
-        public UserInfor UserInfors { get; set; }
+        
         public int UserID { get; set; }
         [Column("UserName",TypeName ="varchar")]
         [StringLength(500)]
@@ -28,5 +27,6 @@ namespace WebAPI.Models
         public bool Status { get; set; }
 
         public ICollection<Orders> Orders { get; set; }
+        public ICollection<UserInfor> UserInfors { get; set; }
     }
 }

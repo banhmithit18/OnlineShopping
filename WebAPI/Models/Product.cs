@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Models
 {
-    [Table("Product")]
+    [Table("Products")]
     public class Product
     {
         [Key]
@@ -51,7 +51,6 @@ namespace WebAPI.Models
         [Column("Active",TypeName ="bit")]
         public bool Active { get; set; }
 
-        public ICollection<Orderdetail> Orderdetails { get; set; }
         public ICollection<ProductInfo> ProductInfos { get; set; }
 
 

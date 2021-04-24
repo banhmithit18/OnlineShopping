@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPI.ModelsAdmin
+namespace WebAPI.Models
 {
     [Table("FeedBack")]
     public class FeedBack
@@ -30,6 +30,9 @@ namespace WebAPI.ModelsAdmin
         public string Email { get; set; }
         [Column("ReceivedDate",TypeName ="smalldatetime")]
         public DateTime ReceivedDate { get; set; }
+
+        [Column("Status",TypeName ="bit")]
+        public bool Status { get; set; }
 
     }
 }
