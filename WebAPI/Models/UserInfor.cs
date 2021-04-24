@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.ModelsAdmin;
 
 namespace WebAPI.Models
 {
@@ -43,12 +44,15 @@ namespace WebAPI.Models
 
         [Column("VIPRankID",TypeName ="int")]
         public int VIPRankID { get; set; }
+        [ForeignKey("VIPRankID")]
+        public VipRank VipRanks { get; set; }
 
         [Column("SpentAmount",TypeName ="float")]
         public float SpentAmount { get; set; }
 
+        [Column("UserID",TypeName ="int")]
+        public int UserID { get; set; }
 
-
-
+        public ICollection<Users> Users { get; set; }
     }
 }

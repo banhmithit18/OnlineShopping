@@ -15,6 +15,8 @@ namespace WebAPI.Models
         [Column("ID",TypeName ="int")]
         public int ID { get; set; }
         [Column("ProductID",TypeName ="int")]
+        [ForeignKey("ProductID")]
+        public Product Product { get; set; }
         public int ProductID { get; set; }
 
         [Column("Quantity",TypeName ="int")]

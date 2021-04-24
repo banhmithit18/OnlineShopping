@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPI.ModelsAdmin
+namespace WebAPI.Models
 {
     [Table("Discount")]
     public class Discount
@@ -22,5 +22,6 @@ namespace WebAPI.ModelsAdmin
         [Column("Active",TypeName ="bit")]
         public bool Active { get; set; }
 
+        public ICollection<Orders> Orders { get; set; }
     }
 }

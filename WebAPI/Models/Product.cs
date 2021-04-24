@@ -16,9 +16,13 @@ namespace WebAPI.Models
         public int ID { get; set; }
 
         [Column("TypeID",TypeName ="int")]
+        [ForeignKey("TypeID")]
+        public Type Types { get; set; }
         public int TypeID { get; set; }
 
         [Column("BrandID",TypeName ="int")]
+        [ForeignKey("BrandID")]
+        public Brand Brands { get; set; }
         public int BrandID { get; set; }
 
         [Column("ProductName",TypeName ="varchar")]
@@ -33,6 +37,8 @@ namespace WebAPI.Models
         public string ProductImage { get; set; }
 
         [Column("CategoryID",TypeName ="int")]
+        [ForeignKey("CategoryID")]
+        public Category Categories { get; set; }
         public int CategoryID { get; set; }
 
         [Column("Descriptions",TypeName ="varchar")]
@@ -44,6 +50,9 @@ namespace WebAPI.Models
 
         [Column("Active",TypeName ="bit")]
         public bool Active { get; set; }
+
+        public ICollection<Orderdetail> Orderdetails { get; set; }
+        public ICollection<ProductInfo> ProductInfos { get; set; }
 
 
 

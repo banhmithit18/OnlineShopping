@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPI.ModelsAdmin
+namespace WebAPI.Models
 {
     [Table("Orderdetail")]
     public class Orderdetail
@@ -15,8 +15,12 @@ namespace WebAPI.ModelsAdmin
         [Column("ID",TypeName ="int")]
         public int ID { get; set; }
         [Column("OrderID",TypeName ="int")]
+        [ForeignKey("OrderID")]
+        public Orders Orders { get; set; }
         public int OrderID { get; set; }
         [Column("ProductID",TypeName ="int")]
+        [ForeignKey("ProductID")]
+        public Product Products { get; set; }
         public int ProductID { get; set; }
         [Column("Price",TypeName ="float")]
         public float Price { get; set; }

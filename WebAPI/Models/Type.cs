@@ -22,6 +22,7 @@ namespace WebAPI.Models
         [Column("Active",TypeName ="bit")]
         public bool Active { get; set; }
 
+        public ICollection<Product> Products { get; set; }
 
     }
 }

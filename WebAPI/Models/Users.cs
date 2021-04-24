@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPI.ModelsAdmin
+namespace WebAPI.Models
 {
     [Table("Users")]
     public class Users
@@ -13,6 +13,8 @@ namespace WebAPI.ModelsAdmin
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("UserID",TypeName ="int")]
+        [ForeignKey("UserID")]
+        public UserInfor UserInfors { get; set; }
         public int UserID { get; set; }
         [Column("UserName",TypeName ="varchar")]
         [StringLength(500)]
@@ -24,5 +26,7 @@ namespace WebAPI.ModelsAdmin
         public DateTime RegistrationDate { get; set; }
         [Column("Status",TypeName ="bit")]
         public bool Status { get; set; }
+
+        public ICollection<Orders> Orders { get; set; }
     }
 }
