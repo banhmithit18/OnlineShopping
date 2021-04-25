@@ -1,0 +1,194 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    Layout = "_layoutProduct";
+}
+<style>
+    .product {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 500px;
+        height: 650px;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,.25);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+        .product:hover .details {
+            background-color: #fff;
+            box-shadow: 0 0 0 rgba(0,0,0,.25);
+            bottom: 0;
+        }
+
+    .imgbox {
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+        .imgbox img {
+            display: block;
+            width: 100%;
+            margin: 50px auto 50px;
+        }
+
+    .details {
+        position: absolute;
+        width: 100%;
+        bottom: -300px;
+        background: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        transition: .5s;
+        border-radius: 50px 50px 0 0;
+    }
+
+        .details h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            font-weight: 400;
+            width: 100%;
+        }
+
+        .details span {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            font-weight: 300;
+            width: 100%;
+        }
+
+        .details .price {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-weight: 200;
+            color: black;
+            font-size: 20px;
+        }
+
+    label {
+        display: block;
+        margin-top: 5px;
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+        ul li {
+            list-style: none;
+            margin: 5px 5px 0;
+            font-size: 15px;
+            font-weight: 300;
+            color: black;
+        }
+
+            ul li:first-child {
+                margin-left: 0;
+            }
+
+    .details a {
+        display: block;
+        padding: 5px;
+        color: black;
+        margin: 15px 0 0;
+        border-radius: 50px;
+        background-color: transparent;
+        text-align: center;
+        text-decoration: none !important;
+        transition: .3s;
+        cursor: pointer;
+        border: solid;
+    }
+
+        .details a:hover {
+            background: #202020;
+            color: white;
+        }
+
+    .details ul li {
+        display: flex;
+        justify-content: center;
+    }
+
+        .details ul li span:hover {
+            background: #ddd;
+        }
+
+        .details ul li span {
+            position: relative;
+            width: 35px;
+            font-size: 20px;
+            height: 35px;
+            border: 1px solid black;
+            text-align: center;
+            margin: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            line-height: 35px;
+        }
+
+    .color-wrap ul {
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        align-items: center;
+    }
+
+        .color-wrap ul li {
+            width: 22px;
+            height: 22px;
+            background: #000;
+            margin: 5px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+            .color-wrap ul li.active {
+                width: 30px;
+                border: 1px solid black;
+                height: 30px;
+            }
+</style>
+
+
+@* information product*@
+<div class="product">
+    <div class="imgbox">
+        <img src="../img/gucci-shirt-white.png" />
+    </div>
+    <div class="details">
+        <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
+        <div class="price"> $999</div>
+        <label> Sizes </label>
+        <ul>
+            <li><span> S </span></li>
+            <li><span> M </span></li>
+            <li><span> L </span></li>
+        </ul>
+        <label> Colors </label>
+        <div class="color-wrap">
+            <ul class="colors">
+                <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
+                <li class="active" data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
+                <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
+            </ul>
+        </div>
+        @* button add to cart  *@
+        <a href="#"> Add To Cart </a>
+    </div>
+</div>
+
+
