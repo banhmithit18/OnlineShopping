@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> ChangeDiscountStatus(int id)
         {
 
-            FeedBack b = _context.FeedBacks.FirstOrDefault(u => u.ID == id || u.Status == false);
+            FeedBack b = _context.FeedBacks.FirstOrDefault(u => u.ID == id && u.Status == false);
             b.Status = true;
             try
             {

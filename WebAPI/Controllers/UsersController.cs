@@ -87,7 +87,7 @@ namespace WebAPI.Controllers
         {
 
 
-            Users T = _context.Users.FirstOrDefault(a => a.UserID == id || a.Status == false);
+            Users T = _context.Users.FirstOrDefault(a => a.UserID == id && a.Status == false);
             T.Status = true;
 
             try
@@ -114,7 +114,7 @@ namespace WebAPI.Controllers
         {
 
 
-            Users T = _context.Users.FirstOrDefault(a => a.UserID == id || a.Status == true);
+            Users T = _context.Users.FirstOrDefault(a => a.UserID == id && a.Status == true);
             T.Status = false;
 
             try

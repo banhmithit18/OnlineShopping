@@ -80,7 +80,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> ActiveDiscount(int id)
         {
 
-            Discount b = _context.Discounts.FirstOrDefault(u => u.ID == id || u.Active == false);
+            Discount b = _context.Discounts.FirstOrDefault(u => u.ID == id && u.Active == false);
             b.Active = true;
             try
             {
@@ -105,7 +105,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> DisableCategory(int id)
         {
 
-            Discount b = _context.Discounts.FirstOrDefault(u => u.ID == id || u.Active == false);
+            Discount b = _context.Discounts.FirstOrDefault(u => u.ID == id && u.Active == false);
             b.Active = false;
             try
             {

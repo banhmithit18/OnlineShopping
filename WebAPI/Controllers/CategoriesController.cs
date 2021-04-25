@@ -81,7 +81,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> ActiveCategory(int id)
         {
 
-            Category b = _context.Categories.FirstOrDefault(u => u.ID == id || u.Active == false);
+            Category b = _context.Categories.FirstOrDefault(u => u.ID == id && u.Active == false);
             b.Active = true;
             try
             {
@@ -106,7 +106,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> DisableCategory(int id)
         {
 
-            Category b = _context.Categories.FirstOrDefault(u => u.ID == id || u.Active == true);
+            Category b = _context.Categories.FirstOrDefault(u => u.ID == id && u.Active == true);
             b.Active = false;
             try
             {

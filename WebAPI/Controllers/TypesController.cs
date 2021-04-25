@@ -83,7 +83,7 @@ namespace WebAPI.Controllers
         {
 
 
-            Type T = _context.Types.FirstOrDefault(a => a.ID == id || a.Active == false);
+            Type T = _context.Types.FirstOrDefault(a => a.ID == id && a.Active == false);
             T.Active = true;
 
             try
@@ -110,7 +110,7 @@ namespace WebAPI.Controllers
         {
 
 
-            Type T = _context.Types.FirstOrDefault(a => a.ID == id || a.Active == true);
+            Type T = _context.Types.FirstOrDefault(a => a.ID == id && a.Active == true);
             T.Active = false;
 
             try

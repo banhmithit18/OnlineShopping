@@ -82,7 +82,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> ActiveBrand(int id)
         {
            
-            Brand b = _context.Brands.FirstOrDefault(u => u.ID == id || u.Active == false);
+            Brand b = _context.Brands.FirstOrDefault(u => u.ID == id && u.Active == false);
             b.Active = true;
             try
             {
@@ -107,7 +107,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> DisableBrand(int id)
         {
 
-            Brand b = _context.Brands.FirstOrDefault(u => u.ID == id || u.Active == true);
+            Brand b = _context.Brands.FirstOrDefault(u => u.ID == id && u.Active == true);
             b.Active = false;
             try
             {

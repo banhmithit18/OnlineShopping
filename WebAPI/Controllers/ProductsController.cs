@@ -117,7 +117,7 @@ namespace WebAPI.Controllers
         {
 
 
-            Product T = _context.Products.FirstOrDefault(a => a.ID == id || a.Active == false);
+            Product T = _context.Products.FirstOrDefault(a => a.ID == id && a.Active == false);
             T.Active = true;
 
             try
@@ -144,7 +144,7 @@ namespace WebAPI.Controllers
         {
 
 
-            Product T = _context.Products.FirstOrDefault(a => a.ID == id || a.Active == true);
+            Product T = _context.Products.FirstOrDefault(a => a.ID == id && a.Active == true);
             T.Active = false;
 
             try
