@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebAPI.Models;
+using WebAPIUser.Models;
 
 namespace WebAPIUser.Controllers
 {
@@ -36,28 +37,33 @@ namespace WebAPIUser.Controllers
             }
             else
             {
-                byte[] salt = new byte[128 / 8];
-                using (var rng = RandomNumberGenerator.Create())
+                /* Fetch the stored value */
+                string savedPasswordHash = _context.Users.FirstOrDefault(u => u.UserName == username).UserPassword;
+                /* Extract the bytes */
+                byte[] hashBytes = Convert.FromBase64String(savedPasswordHash);
+                /* Get the salt */
+                byte[] salt = new byte[16];
+                Array.Copy(hashBytes, 0, salt, 0, 16);
+                /* Compute the hash on the password the user entered */
+                var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 100000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                /* Compare the results */
+                for (int i = 0; i < 20; i++)
                 {
-                    rng.GetBytes(salt);
-                }
-                string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                                password: password,
-                                salt: salt,
-                                prf: KeyDerivationPrf.HMACSHA1,
-                                iterationCount: 10000,
-                                numBytesRequested: 256 / 8));
-                var CheckPass = await _context.Users.FirstOrDefaultAsync(a => a.UserName == username && a.UserPassword == password);
-                if (CheckPass != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    if (hashBytes[i + 16] != hash[i])
+                    {
+                     
+                        return false;
 
+                    }
+                    else
+                    {
+                        return true;
+
+                    }
                 }
             }
+            return false;
 
         }
 
@@ -118,21 +124,18 @@ namespace WebAPIUser.Controllers
         [HttpPost("Create")]
         public async Task<ActionResult<bool>> CreateUsers(Users users)
         {
-            var CheckEmail = _context.Users.FirstOrDefaultAsync(a => a.UserName == users.UserName);
+            var CheckEmail = _context.Users.FirstOrDefault(a => a.UserName == users.UserName);
             if (CheckEmail == null)
             {
-                byte[] salt = new byte[128 / 8];
-                using (var rng = RandomNumberGenerator.Create())
-                {
-                    rng.GetBytes(salt);
-                }
-                string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                                password: users.UserPassword,
-                                salt: salt,
-                                prf: KeyDerivationPrf.HMACSHA1,
-                                iterationCount: 10000,
-                                numBytesRequested: 256 / 8));
-                users.UserPassword = hashed;
+                byte[] salt;
+                new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+                var pbkdf2 = new Rfc2898DeriveBytes(users.UserPassword, salt, 100000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                byte[] hashBytes = new byte[36];
+                Array.Copy(salt, 0, hashBytes, 0, 16);
+                Array.Copy(hash, 0, hashBytes, 16, 20);
+                string savedPasswordHash = Convert.ToBase64String(hashBytes);
+                users.UserPassword = savedPasswordHash;
                 _context.Users.Add(users);
                 if (await _context.SaveChangesAsync() != 0)
                 {

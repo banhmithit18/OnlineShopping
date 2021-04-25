@@ -80,8 +80,8 @@ namespace WebAPI.Controllers
         {
 
 
-            VipRank T = _context.VipRanks.FirstOrDefault(a => a.ID == id && a.Active == false);
-            T.Active = true;
+            VipRank b = _context.VipRanks.FirstOrDefault(a => a.ID == id && a.Active == false);
+            if (b != null) b.Active = true; else b = null;
 
             try
             {
@@ -107,8 +107,8 @@ namespace WebAPI.Controllers
         {
 
 
-            VipRank T = _context.VipRanks.FirstOrDefault(a => a.ID == id && a.Active == true);
-            T.Active = false;
+            VipRank b = _context.VipRanks.FirstOrDefault(a => a.ID == id && a.Active == true);
+            if (b != null) b.Active = false; else b = null;
 
             try
             {

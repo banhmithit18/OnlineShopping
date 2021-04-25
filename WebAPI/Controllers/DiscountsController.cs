@@ -81,7 +81,7 @@ namespace WebAPI.Controllers
         {
 
             Discount b = _context.Discounts.FirstOrDefault(u => u.ID == id && u.Active == false);
-            b.Active = true;
+            if (b != null) b.Active = true; else b = null;
             try
             {
                 await _context.SaveChangesAsync();
@@ -106,7 +106,7 @@ namespace WebAPI.Controllers
         {
 
             Discount b = _context.Discounts.FirstOrDefault(u => u.ID == id && u.Active == false);
-            b.Active = false;
+            if (b != null) b.Active = false; else b = null;
             try
             {
                 await _context.SaveChangesAsync();

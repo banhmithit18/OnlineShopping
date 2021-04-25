@@ -78,7 +78,7 @@ namespace WebAPI.Controllers
 
 
             ProductInfo T = _context.ProductInfos.FirstOrDefault(a => a.ID == id && a.Active == false);
-            T.Active = true;
+            if (T != null) T.Active = true; else T = null;
 
             try
             {
@@ -105,7 +105,7 @@ namespace WebAPI.Controllers
 
 
             ProductInfo T = _context.ProductInfos.FirstOrDefault(a => a.ID == id && a.Active == true);
-            T.Active = false;
+            if (T != null) T.Active = true; else T = null;
 
             try
             {
