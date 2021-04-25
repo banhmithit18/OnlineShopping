@@ -1,71 +1,371 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    position: relative;
+    height: 100vh;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+/*header*/
+
+header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    justify-content: space-between;
+    padding: 40px 100px;
+    transition: 0.6s;
+    align-items: center;
 }
+
+    header .logo {
+        position: relative;
+        text-decoration: none;
+        font-size: 100px;
+        letter-spacing: 10px;
+        font-weight: 100;
+        color: #fff;
+        transition: 0.6s;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+
+    header ul {
+        display: flex;
+        left: 0;
+        top: 100px;
+        transform: translate(-50%,0);
+        position: relative;
+        transition: 0.1s;
+    }
+        header ul li {
+            position: relative;
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            top: 50%;
+            left: 50%;
+            
+        }
+       
+            header ul li a {
+                position: relative;
+                margin: 0 14px;
+                letter-spacing: 2px;
+                color: #fff;
+                transition: 0.5s;
+                letter-spacing: 2px;
+                font-weight: 200;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none !important;
+            }
+    header .infor {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        right: 0;
+    }
+
+    header.sticky {
+        padding: 10px 100px;
+        background-color: #202020;
+    }
+
+        header.sticky .logo {
+            font-size: 40px;
+            font-weight: 200;
+            top: 0;
+            left: 0;
+            transform: translate(0,0);
+        }
+
+        header.sticky ul {
+            position:relative;
+            justify-content:center;
+            align-items:center;
+            top: 50%;
+            left: -10%;
+            transform: translate(0%,50%);
+        }
+
+.placement-banner {
+    height: 35px;
+    background-color: #fff;
+    z-index: 100000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.btn_close {
+    width: 35px;
+    border-radius:30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.placement-square1 {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+.placement-square2 {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.placement-wrapper.en {
+    width: 200%;
+}
+
+.placement-animated1-right.en {
+    animation: marquee_en 30s linear infinite;
+}
+
+.placement-wrapper {
+    display: block;
+    top: 5px;
+    position: absolute;
+}
+
+    .placement-wrapper.en {
+        width: 200%;
+    }
+
+.placement-animated2-right.en {
+    animation: marquee_en 30s linear 25s infinite;
+    transform: translateX(-200%);
+}
+
+.placement-wrapper {
+    display: block;
+    top: 5px;
+    position: absolute;
+}
+
+img.placement-icon {
+    height: 15px;
+    display: inline-block;
+    margin: 0px 40px;
+}
+
+.placement-copy {
+    display: inline-block;
+    font-size: 15px;
+}
+
+
+
+@keyframes marquee_en {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+    .swiper-slide:nth-child(1) {
+        background: url(../img/bg1.jpeg);
+        background-size: cover;
+    }
+    .swiper-slide:nth-child(2){
+        background:url("../img/bg2.jpeg");
+        background-size:cover;
+    }
+    .swiper-slide:nth-child(3){
+        background:url("../img/bg3.jpeg");
+        
+    }
+    .swiper-slide:nth-child(4){
+        background:url("../img/bg4.jpeg");
+        
+    }
+
+.swiper-button-next {
+    color:#fff;
+}
+
+.swiper-button-prev {
+    color: #fff;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+
+.btn_shop {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    color: #fff;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+    .btn_shop:hover {
+        background-color: #202020;
+        border: #202020;
+        box-shadow: inset;
+    }
+
+#scrollTop {
+    display: block; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 100px; /* Place the button at the bottom of the page */
+    right: -20px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    background-color: transparent; /* Set a background color */
+    color: black; /* Text color */
+    border: none;
+    cursor: pointer; /* Add a mouse pointer on hover */
+    font-size: 15px; /* Increase font size */
+    transform: rotate(270deg);
+    transition: 0.5s;
+}
+
+    #scrollTop:hover {
+        color: #5a5a5a;
+        transition: 0.5s;
+    }
+/*drop down menu    */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        left:0!important;
+        margin:0!important;
+        top:0;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            
+            background-color: #ddd;
+            transition:0.2s;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+ 
+}
+a:hover{
+    color:#ddd;
+    transition:0.2s;
+    
+}
+/*header*/
+
+/*body*/
+/*breadcrumb*/
+.breadcrumbs ul {
+    padding: 10px 16px;
+    list-style: none;
+}
+
+.breadcrumbs ul li {
+    display: inline;
+    font-size: 18px;
+}
+
+    .breadcrumbs ul li + li:before {
+        padding: 8px;
+        color: #202020;
+        content: "|\00a0";
+    }
+
+    .breadcrumbs ul li a {
+        color: black;
+        text-decoration: none;
+    }
+
+        .breadcrumbs ul li a:hover {
+            color: black;
+            text-decoration: none !important;
+        }
+/*body*/
+
+
+/*footer*/
+#footer-main {
+    font-weight: 600;
+    font-style: normal;
+    background: #1b1b1b;
+    color: #999;
+    padding: 0 70px;
+    position: relative;
+    width: 100%;
+    height:300px;
+}
+/*footer*/
