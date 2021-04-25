@@ -40,10 +40,10 @@ namespace WebAPI.Controllers
 
             return userInfor;
         }
-        [HttpGet("Search/{name}")]
+        [HttpGet("Search/{field}")]
         public async Task<ActionResult<IEnumerable<UserInfor>>> SearchUserInfo(string field,string value)
         {
-            var s = await  _context.UserInfors.ToListAsync(); ;
+            var s = await  _context.UserInfors.ToListAsync();
             switch (field)
             {
                 case "FullName":

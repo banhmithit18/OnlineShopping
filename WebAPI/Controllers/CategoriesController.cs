@@ -82,7 +82,7 @@ namespace WebAPI.Controllers
         {
 
             Category b = _context.Categories.FirstOrDefault(u => u.ID == id && u.Active == false);
-            b.Active = true;
+            if (b != null) b.Active = true; else b = null;
             try
             {
                 await _context.SaveChangesAsync();
@@ -107,7 +107,7 @@ namespace WebAPI.Controllers
         {
 
             Category b = _context.Categories.FirstOrDefault(u => u.ID == id && u.Active == true);
-            b.Active = false;
+            if (b != null) b.Active = false; else b = null;
             try
             {
                 await _context.SaveChangesAsync();

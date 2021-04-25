@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebAPI.Models;
+using WebAPIUser.Models;
 
 namespace WebAPIUser.Controllers
 {
@@ -20,9 +20,9 @@ namespace WebAPIUser.Controllers
             _context = context;
         }
         [HttpGet("Check/{name}")]
-        public async Task<ActionResult<bool>> CheckDiscount(string code)
+        public async Task<ActionResult<bool>> CheckDiscount(string name)
         {
-            var discount = await _context.Discounts.FirstOrDefaultAsync(a=>a.Active == true && a.DiscountCode == code);
+            var discount = await _context.Discounts.FirstOrDefaultAsync(a=>a.Active == true && a.DiscountCode == name);
 
             if (discount == null)
             {

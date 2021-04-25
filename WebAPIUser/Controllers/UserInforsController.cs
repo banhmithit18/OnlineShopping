@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebAPI.Models;
+using WebAPIUser.Models;
 
 namespace WebAPIUser.Controllers
 {
@@ -23,9 +23,9 @@ namespace WebAPIUser.Controllers
      
         // GET: api/UserInfors/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserInfor>> GetUserInfor(int UserID)
+        public async Task<ActionResult<UserInfor>> GetUserInfor(int id)
         {
-            var userInfor = await _context.UserInfors.FirstOrDefaultAsync(a=>a.UserID == UserID);
+            var userInfor = await _context.UserInfors.FirstOrDefaultAsync(a=>a.UserID == id);
 
             if (userInfor == null)
             {

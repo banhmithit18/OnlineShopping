@@ -77,7 +77,7 @@ namespace WebAPI.Controllers
         {
 
             FeedBack b = _context.FeedBacks.FirstOrDefault(u => u.ID == id && u.Status == false);
-            b.Status = true;
+            if (b != null) b.Status = true; else b = null;
             try
             {
                 await _context.SaveChangesAsync();
