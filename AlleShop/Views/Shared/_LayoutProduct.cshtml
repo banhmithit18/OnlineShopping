@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<style>
+<body>
+
+    <style>
 
     .placement-banner {
 
@@ -139,10 +141,10 @@
                     text-decoration: none !important ;
                 }
 
-</style>
+    </style>
 
 
-<body>
+
     <section id="banner">
         <div id="placement-banner" class="placement-banner">
             <div class="placement-banner" style="background:#FFFFFF;">
@@ -258,6 +260,8 @@
     @* jquery*@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Prooduct.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
