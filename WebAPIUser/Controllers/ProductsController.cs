@@ -25,11 +25,10 @@ namespace WebAPIUser.Controllers
         public async Task<ActionResult<IEnumerable<ProductView>>> GetProducts()
         {
             var a = (from p in _context.Products
-                          join pf in _context.ProductInfos on p.ID equals pf.ProductID
                           join t in _context.Types on p.TypeID equals t.ID
                           join c in _context.Categories on p.CategoryID equals c.ID
                           join b in _context.Brands on p.BrandID equals b.ID
-                          select new ProductView { brand = b.NameBrand, category = c.CategoryName, color = pf.Color, img = pf.ProductImage, name = p.ProductName, price = p.Price, size = pf.Size, type = t.TypeName,active=p.Active }).Where(p=>p.active == true).ToListAsync();
+                          select new ProductView {id= p.ID, brand = b.NameBrand, category = c.CategoryName, name = p.ProductName, price = p.Price, type = t.TypeName,active=p.Active }).Where(p=>p.active == true).ToListAsync();
             return await a;
         }
 

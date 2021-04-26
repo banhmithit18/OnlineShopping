@@ -47,20 +47,6 @@ function scrollToTop() {
 }
 
 //choose color clothes
-$(document).ready(function () {
-    $(".color-wrap ul li").each(function (item) {
-        var color = $(this).attr("data-color");
-        $(this).css("backgroundColor", color);
-    })
-    $(".color-wrap ul li").each(function (item) {
-        $(this).click(function () {
-            $(this).parents(".product").find(".color-wrap ul li").removeClass("active")
-            $(this).addClass("active");
 
-            var imgsrc = $(this).attr("data-src");
-            $(this).parents(".product").find("img").attr("src", imgsrc);
-        })
-    })
-})
 
 
