@@ -12,112 +12,117 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<style>
+<body>
+    <style>
 
-    .placement-banner {
-       
-        background-color: #fff;
-        z-index: 100000;
-        position: relative;
-        width: 100%;
-        top: 0;
-        height: 35px;
-    }
-    header {
-        position: relative;
-        display: flex;
-        top: 0;
-        left: 0;
-        /* color: black; */
-        width: 100%;
-        justify-content: space-between;
-        padding: 10px 100px;
-        transition: 0.6s;
-        align-items: center;
-        background-color: black;
-    }
-
-
-        header .logo {
+        .placement-banner {
+            background-color: #fff;
+            z-index: 100000;
             position: relative;
-            text-decoration: none;
-            
-            letter-spacing: 10px;
-            font-weight: 100;
-            color: #fff;
-            transition: 0.6s;
-            top: 50%;
-            left: 0;
-            font-size: 35px;
-            transform: translate(0,0);
+            width: 100%;
+            top: 0;
+            height: 35px;
         }
-        header ul {
-            display:flex;
-            left: 0;
-            top: 50%;
+
+        header {
             position: relative;
+            display: flex;
+            top: 0;
+            left: 0;
+            /* color: black; */
+            width: 100%;
+            justify-content: space-between;
+            padding: 10px 100px;
             transition: 0.6s;
-            transform:translate(0,0);
+            align-items: center;
+            background-color: black;
         }
-            header ul li {
+
+
+            header .logo {
+                position: relative;
+                text-decoration: none;
+                letter-spacing: 10px;
+                font-weight: 100;
+                color: #fff;
+                transition: 0.6s;
+                top: 50%;
+                left: 0;
+                font-size: 35px;
+                transform: translate(0,0);
+            }
+
+            header ul {
+                display: flex;
+                left: 0;
+                top: 50%;
+                position: relative;
+                transition: 0.6s;
+                transform: translate(0,0);
+            }
+
+                header ul li {
+                    position: relative;
+                    display: flex;
+                    list-style: none;
+                    justify-content: center;
+                    align-items: center;
+                    top: 50%;
+                    left: 0;
+                }
+
+                    header ul li a {
+                        position: relative;
+                        margin: 0 14px;
+                        letter-spacing: 2px;
+                        color: #fff;
+                        transition: 0.5s;
+                        letter-spacing: 2px;
+                        font-weight: 200;
+                        justify-content: center;
+                        align-items: center;
+                        text-decoration: none !important;
+                    }
+
+            header .infor {
                 position: relative;
                 display: flex;
-                list-style: none;
                 justify-content: center;
                 align-items: center;
                 top: 50%;
-                left: 0;
-                
+                right: 0;
+                transform: translate(0,0);
             }
-                header ul li a {
-                    position: relative;
-                    margin: 0 14px;
-                    letter-spacing: 2px;
-                    color: #fff;
-                    transition: 0.5s;
-                    letter-spacing: 2px;
-                    font-weight: 200;
-                    justify-content: center;
-                    align-items: center;
-                    text-decoration: none !important;
-                }
-        header .infor {
+
+        .header-sw-banner {
             position: relative;
-             display: flex; 
-             justify-content: center; 
-             align-items: center;
-             top: 50%; 
-             right: 0;
-             transform:translate(0,0);
-            
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 30px;
+            background-color: #ddd;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
-    .header-sw-banner {
-        position:relative;
-        left:0;
-        top:0;
-        width:100%;
-        height : 30px;
-        background-color:#ddd;
-        letter-spacing:2px;
-        text-transform:uppercase;
-    }
-    .header-sw-banner i {
-        transform:rotate(180deg);
-    }
-    .header-sw-banner p{
-        position:relative;
-        top:0;
-        left:20%;
-        transform:translate(0,0);
-        font-size:11px;
 
-    }
-    
-    
-</style>
+            .header-sw-banner i {
+                transform: rotate(180deg);
+            }
+
+            .header-sw-banner p {
+                position: relative;
+                top: 0;
+                left: 20%;
+                transform: translate(0,0);
+                font-size: 11px;
+            }
+
+        
+    </style>
 
 
-<body>
+
+
     <section id="banner">
         <div id="placement-banner" class="placement-banner">
             <div class="placement-banner" style="background:#FFFFFF;">
