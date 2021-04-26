@@ -40,7 +40,7 @@ namespace AlleShop
             app.UseStaticFiles();
             app.UseSession();
             app.UseRouting();
-
+            app.UseDefaultFiles();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -9,12 +9,16 @@
     <Folder Include="Views\AboutUs\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
   <ItemGroup>
     <Content Update="wwwroot\img\gucci-shirt.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\img\gucci-shirt-white.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 </Project>
