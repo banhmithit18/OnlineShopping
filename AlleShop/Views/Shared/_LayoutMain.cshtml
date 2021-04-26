@@ -25,7 +25,7 @@
         }
 
         header {
-            position: relative;
+            position: sticky;
             display: flex;
             top: 0;
             left: 0;
@@ -59,6 +59,14 @@
                 position: relative;
                 transition: 0.6s;
                 transform: translate(0,0);
+            }
+            header.sticky ul {
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                top: 0;
+                left: 0;
+                transform: translate(0%,0%);
             }
 
                 header ul li {
@@ -223,7 +231,9 @@
     </div>
 
     <button onclick="scrollToTop()" id="scrollTop" title="go to top"> Scroll to top <i class="bi bi-arrow-right"></i></button>
+    <footer id="footer-main">
 
+    </footer>
 
     @*swpier*@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>

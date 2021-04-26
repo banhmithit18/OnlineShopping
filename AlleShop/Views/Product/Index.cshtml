@@ -1,26 +1,29 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-    Layout = "_layoutProduct";
+
+
+
+@{ Layout = "_layoutProduct";
 }
 <style>
     .product {
         position: relative;
         float: left;
-        width: 30%;
+        width: 32%;
         top: 0;
         left: 0;
-        margin: 20px;
+        margin: 5px;
+        border-radius: 30px;
         height: 650px;
         background-color: #fff;
-        box-shadow: 0 5px 15px rgba(0,0,0,.25);
+        box-shadow: 0 5px 15px rgba(0, 0, 0,.25);
         overflow: hidden;
     }
 
         .product:hover .details {
-            background-color: #fff;
-            box-shadow: 0 0 0 rgba(0,0,0,.25);
+            background: #ddd ;
+            box-shadow: 0 1px 0 2px rgba(0,0,0,.2);
             bottom: 0;
         }
 
@@ -38,13 +41,13 @@
     .details {
         position: absolute;
         width: 100%;
-        bottom: -300px;
+        bottom: -350px;
         background: #fff;
         padding: 20px;
         box-sizing: border-box;
-        box-shadow: 0 0 0 rgba(0,0,0,0);
+        box-shadow: 0 0 0 rgba(0, 0, 0, .25);
         transition: .5s;
-        border-radius: 50px 50px 0 0;
+        border-radius: 35px 35px 0 0;
     }
 
         .details h2 {
@@ -65,11 +68,11 @@
 
         .details .price {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-weight: 200;
+            top: 25px;
+            right: 25px;
+            font-weight: 300;
             color: black;
-            font-size: 20px;
+            font-size: 22px;
         }
 
     label {
@@ -99,21 +102,22 @@
 
     .details a {
         display: block;
-        padding: 5px;
+        padding: 10px;
         color: black;
-        margin: 15px 0 0;
+        margin: 25px 0 25px;
         border-radius: 50px;
         background-color: transparent;
         text-align: center;
         text-decoration: none !important;
         transition: .3s;
         cursor: pointer;
-        border: solid;
+        border: 1px solid black;
     }
 
         .details a:hover {
             background: #202020;
             color: white;
+            border: 1px solid #fff;
         }
 
     .details ul li {
@@ -122,7 +126,7 @@
     }
 
         .details ul li span:hover {
-            background: #ddd;
+            background: #202020;
         }
 
         .details ul li span {
@@ -138,6 +142,11 @@
             transition: all 0.2s ease;
             line-height: 35px;
         }
+        .details ul li.active{
+            background:#202020;
+            color:white;
+            border-radius:50%;
+        } 
 
     .color-wrap ul {
         display: flex;
@@ -163,16 +172,109 @@
             }
 
     .product-grid {
-        position:relative;
-        display:inline-block;
-        padding:0 10px;
+        position: relative;
+        display: inline-block;
+        padding: 0 20px;
     }
+
+    .pagination {
+        margin: 20px auto 20px;
+        position: relative;
+        justify-content: center;
+        align-items: center
+    }
+
+        .pagination ul {
+            position: relative;
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.25);
+        }
+
+            .pagination ul li {
+                list-style: none;
+                line-height: 35px;
+                margin: 0 5px;
+            }
+
+                .pagination ul li .pageNumber {
+                    width: 35px;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                }
+
+                .pagination ul li a {
+                    text-decoration: none ;
+                    display: block;
+                    color: black;
+                    font-weight: 600;
+                    border-radius: 50%;
+                }
+
+                .pagination ul li .pageNumber:hover a,
+                .pagination ul li .pagination.active a {
+                    background-color: black ;
+                    color: white;
+                }
 </style>
 
 
 @* information product*@
 <div class="product-grid">
-    <div class="col-4 product">
+    <div class="product">
+        <div class="imgbox">
+            <img src="../img/gucci-shirt-white.png" />
+        </div>
+        <div class="details">
+            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
+            <div class="price"> $999</div>
+            <label> Sizes </label>
+            <ul>
+                <li><span> S </span></li>
+                <li><span> M </span></li>
+                <li><span> L </span></li>
+            </ul>
+            <label> Colors </label>
+            <div class="color-wrap">
+                <ul class="colors">
+                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
+                    <li  data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
+                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
+                </ul>
+            </div>
+            @* button add to cart  *@
+            <a href="#"> Add To Cart </a>
+        </div>
+    </div>
+    <div class=" product">
+        <div class="imgbox">
+            <img src="../img/gucci-shirt-white.png" />
+        </div>
+        <div class="details">
+            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
+            <div class="price"> $999</div>
+            <label> Sizes </label>
+            <ul>
+                <li><span> S </span></li>
+                <li><span> M </span></li>
+                <li><span> L </span></li>
+            </ul>
+            <label> Colors </label>
+            <div class="color-wrap">
+                <ul class="colors">
+                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
+                    <li  data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
+                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
+                </ul>
+            </div>
+            @* button add to cart  *@
+            <a href="#"> Add To Cart </a>
+        </div>
+    </div>
+    <div class=" product">
         <div class="imgbox">
             <img src="../img/gucci-shirt-white.png" />
         </div>
@@ -197,7 +299,7 @@
             <a href="#"> Add To Cart </a>
         </div>
     </div>
-    <div class="col-4 product">
+    <div class=" product">
         <div class="imgbox">
             <img src="../img/gucci-shirt-white.png" />
         </div>
@@ -222,7 +324,7 @@
             <a href="#"> Add To Cart </a>
         </div>
     </div>
-    <div class="col-4 product">
+    <div class=" product">
         <div class="imgbox">
             <img src="../img/gucci-shirt-white.png" />
         </div>
@@ -247,62 +349,25 @@
             <a href="#"> Add To Cart </a>
         </div>
     </div>
-    <div class="col-4 product">
-        <div class="imgbox">
-            <img src="../img/gucci-shirt-white.png" />
-        </div>
-        <div class="details">
-            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
-            <div class="price"> $999</div>
-            <label> Sizes </label>
-            <ul>
-                <li><span> S </span></li>
-                <li><span> M </span></li>
-                <li><span> L </span></li>
-            </ul>
-            <label> Colors </label>
-            <div class="color-wrap">
-                <ul class="colors">
-                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
-                    <li class="active" data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
-                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
-                </ul>
-            </div>
-            @* button add to cart  *@
-            <a href="#"> Add To Cart </a>
-        </div>
-    </div>
-    <div class="col-4 product">
-        <div class="imgbox">
-            <img src="../img/gucci-shirt-white.png" />
-        </div>
-        <div class="details">
-            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
-            <div class="price"> $999</div>
-            <label> Sizes </label>
-            <ul>
-                <li><span> S </span></li>
-                <li><span> M </span></li>
-                <li><span> L </span></li>
-            </ul>
-            <label> Colors </label>
-            <div class="color-wrap">
-                <ul class="colors">
-                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
-                    <li class="active" data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
-                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
-                </ul>
-            </div>
-            @* button add to cart  *@
-            <a href="#"> Add To Cart </a>
-        </div>
-    </div>
-
 </div>
-
 <div id="1"></div>
-<script>
-   
-</script>
+@* pagination (chuyen trang)*@
+<div class="pagination">
+    <ul>
+        <li><a href="#" class="prev"> < Prev </a></li>
+        <li><a href="#" class="pageNumber active"> 1 </a></li>
+        <li><a href="#" class="pageNumber"> 2 </a></li>
+        <li><a href="#" class="pageNumber"> 3 </a></li>
+        <li><a href="#" class="pageNumber"> 4 </a></li>
+        <li><a href="#" class="pageNumber"> 5 </a></li>
+        <li><a href="#" class="pageNumber"> 6 </a></li>
+        <li><a href="#" class="pageNumber"> 7 </a></li>
+        <li><a href="#" class="pageNumber"> 8 </a></li>
+        <li><a href="#" class="pageNumber"> 9 </a></li>
+        <li><a href="#" class="pageNumber"> 10 </a></li>
+        <li><a href="#" class="next"> Next > </a></li>
+    </ul>
+</div>
+<script></script>
 
 

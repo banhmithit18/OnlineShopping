@@ -97,12 +97,12 @@ header {
             position:relative;
             justify-content:center;
             align-items:center;
-            top: 50%;
-            left: -10%;
-            transform: translate(0%,50%);
+            top: 0;
+            left:0;
+            transform: translate(0%,0%);
         }
 
-.placement-banner {
+/*.placement-banner {
     height: 35px;
     background-color: #fff;
     z-index: 100000;
@@ -141,7 +141,7 @@ header {
 }
 
 .placement-wrapper.en {
-    width: 200%;
+    width: 100%;
 }
 
 .placement-animated1-right.en {
@@ -155,12 +155,12 @@ header {
 }
 
     .placement-wrapper.en {
-        width: 200%;
+        width: 100%;
     }
 
 .placement-animated2-right.en {
     animation: marquee_en 30s linear 25s infinite;
-    transform: translateX(-200%);
+    transform: translateX(-100%);
 }
 
 .placement-wrapper {
@@ -190,8 +190,37 @@ img.placement-icon {
     100% {
         left: -100%;
     }
+}*/
+.marquee {
+    height: 25px;
+    width: 420px;
+    overflow: hidden;
+    position: relative;
 }
 
+    .marquee div {
+        display: block;
+        width: 200%;
+        height: 30px;
+        position: absolute;
+        overflow: hidden;
+        animation: marquee 5s linear infinite;
+    }
+
+    .marquee span {
+        float: left;
+        width: 50%;
+    }
+
+@keyframes marquee {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
 
 
 .swiper-container {
