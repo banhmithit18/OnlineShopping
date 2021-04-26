@@ -1,0 +1,32 @@
+﻿.table {
+    font-stretch: ultra-condensed;
+    font-weight: 100;
+}
+
+    .table th {
+        color: darkgrey;
+        text-align: center;
+    }
+
+    .table td {
+        text-align: center;
+    }
+
+.iconone {
+    color: #a5a5a5;
+}
+
+    .iconone:hover {
+        color: black;
+    }
+
+#scrollbarfeed {
+    overflow-y: scroll;
+    height: 846px;
+}
+
+@media only screen and (max-width:1366px) {
+    #scrollbarfeed {
+        height: 568px;
+    }
+}

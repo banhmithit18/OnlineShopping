@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Category";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<form action="/" method="post">
+    <div class="namecategory">
+        <div class="text">
+            Category Name
+        </div>
+        <input class="inputcate" type="text" name="namecategory" />
+    </div>
+    <div class="checkbox">
+        <div class="text">
+            Active
+        </div>
+        <br />
+        <div class="Checkbox">
+            <input class="check" type="checkbox" name="active" />
+        </div>
+
+    </div>
+    <div class="buttoncate">
+        <button class="btnadd">
+            ADD CATEGORY
+        </button>
+    </div>
+</form>

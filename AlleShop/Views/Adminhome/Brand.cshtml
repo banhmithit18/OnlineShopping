@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Brand";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<form action="/" method="post">
+    <div class="namebrand">
+        <div class="textbrands">
+            Brand Name
+        </div>
+        <input class="inputbrand" type="text" name="namebrand" />
+    </div>
+    <div class="checkboxbrand">
+        <div class="textbrand">
+            Active
+        </div>
+        <br />
+        <div class="Checkbox">
+            <input class="check" type="checkbox" name="active" />
+        </div>
+
+    </div>
+    <div class="buttonbrand">
+        <button class="btnbrand">
+            ADD Brand
+        </button>
+    </div>
+    <div class="editbrand">
+        <a class="editsbrand" href="@Url.Action("Brandlist")">Edit</a>
+    </div>
+</form>
+
+

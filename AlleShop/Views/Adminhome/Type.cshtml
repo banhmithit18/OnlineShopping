@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Type";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<form action="/" method="post">
+    <div class="nametype">
+        <div class="texttypes">
+            Type Name
+        </div>
+        <input class="inputtype" type="text" name="nametype" />
+    </div>
+    <div class="checkboxtype">
+        <div class="texttype">
+            Active
+        </div>
+        <br />
+        <div class="Checkbox">
+            <input class="checktype" type="checkbox" name="active" />
+        </div>
+
+    </div>
+    <div class="buttontype">
+        <button class="btntype">
+            ADD Type
+        </button>
+    </div>
+    <div class="edittype">
+        <a class="editstype" href="@Url.Action("Typelist")">Edit</a>
+    </div>
+</form>
+

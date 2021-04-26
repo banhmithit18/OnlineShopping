@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<form action="/" method="post">
+    <div class="nameproduct">
+        <div class="textpr">
+            Name
+        </div>
+        <input class="input" type="text" name="namepr" />
+    </div>
+    <div class="priceproduct">
+        <div class="textpr">
+            Price
+        </div>
+        <input class="input" type="text" name="pricepr" />
+    </div>
+    <div class="brandproduct">
+        <div class="textpr">
+            Brand
+        </div>
+        <input class="input" type="text" name="brandpr" />
+    </div>
+    <div class="typeproduct">
+        <div class="textpr">
+            Type
+        </div>
+        <input class="input" type="text" name="typepr" />
+    </div>
+    <div class="dateproduct">
+        <div class="textprs">
+            Date update
+        </div>
+        <select name="day" id="day">
+            @{
+                <option value="" disabled selected hidden>Day</option>
+                for (var i = 1; i <= 31; i++)
+                {
+                    <option>@i</option>
+                }
+            }
+        </select>
+        <select name="month" id="month">
+            <option value="" disabled selected hidden>Month</option>
+            @{
+                for (var i = 1; i <= 12; i++)
+                {
+                    <option>@i</option>
+                }
+            }
+        </select>
+        <select name="Yera" id="Year">
+            <option value="" disabled selected hidden>Year</option>
+            @{
+                for (var i = 1830; i <= 2021; i++)
+                {
+                    <option>@i</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="activeproduct">
+        <div class="textpr">
+            Active
+        </div>
+        <input class="inputs" type="checkbox" name="activepr" />
+    </div>
+    <div class="logo">
+        <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
+        <p><img id="output" width="200" height="200" /></p>
+        <p><label class="upload" for="file" style="">Upload Image</label></p>
+    </div>
+
+    <div class="description">
+        <textarea placeholder="Description" class="des">
+    </textarea>
+    </div>
+    <div class="buttonpro">
+        <button class="btnaddpro">
+            Add Product
+        </button>
+    </div>
+</form>
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
