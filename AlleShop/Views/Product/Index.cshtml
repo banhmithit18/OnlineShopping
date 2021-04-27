@@ -2,8 +2,6 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-
-
 @{ Layout = "_layoutMain";
 }
 <style>
@@ -78,7 +76,7 @@
             font-size: 22px;
         }
 
-    label {
+    .details label {
         display: block;
         margin-top: 5px;
         font-weight: 400;
@@ -180,6 +178,18 @@
         display: inline-block;
         padding: 0 20px;
     }
+    .sort{
+        position:relative;
+        display:flex;
+        justify-content:left;
+        align-items:center;
+        padding:10px;
+
+    }
+    .sort-content{
+        position:relative;
+        padding:10px;
+    }
 
 </style>
 
@@ -187,9 +197,36 @@
 @* information product*@
 <div class="breadcrumbs">
     <ul>
-        <li><a href="#"> Home </a></li>
-        <li style="color: black"><a href="#"> Product  </a></li>
+        <li><a href="../Home/Index"> Home </a></li>
+        <li style="color: black"><a href="../Product/Index"> Product  </a></li>
     </ul>
+</div>
+<div class="sort">
+    <div class="sort-content">
+        <label> Brand :</label>
+        <select style=" border:none;">
+            <option>Price tang</option>
+            <option>Name</option>
+            <option>gia giam</option>
+        </select>
+    </div>
+    <div class="sort-content">
+        <label> Price :</label>
+        <select style=" border:none;">
+            <option>100$ - 300$</option>
+            <option>300$ - 500$</option>
+            <option>500$ -10004</option>
+        </select>
+    </div>
+    <div class="sort-content">
+        <label> Type :</label>
+        <select style=" border:none;">
+            <option> GUCCI </option>
+            <option> LUOIS VUITON</option>
+            <option> H&M  </option>
+        </select>
+    </div>
+
 </div>
 <div class="product-grid">
     
