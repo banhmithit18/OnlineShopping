@@ -148,7 +148,7 @@ header {
     height: 35px;
     background-color: #fff;
     z-index: 100000;
-    position: sticky;
+    position: absolute;
     overflow:hidden;
     width: 100%;
     top: 0;
