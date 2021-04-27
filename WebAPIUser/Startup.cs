@@ -46,6 +46,7 @@ namespace WebAPIUser
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCors("MyPolicy");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -61,6 +62,7 @@ namespace WebAPIUser
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

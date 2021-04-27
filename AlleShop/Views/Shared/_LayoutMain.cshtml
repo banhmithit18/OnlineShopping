@@ -14,118 +14,41 @@
 </head>
 <body>
     <style>
-
-        .placement-banner {
-            background-color: #fff;
-            z-index: 100000;
-            position: relative;
-            width: 100%;
-            top: 0;
-            height: 35px;
-        }
-
         header {
             position: sticky;
             display: flex;
             top: 0;
             left: 0;
-            /* color: black; */
             width: 100%;
+            background: black;
+            z-index: 10000;
             justify-content: space-between;
             padding: 10px 100px;
             transition: 0.6s;
             align-items: center;
-            background-color: black;
         }
-
 
             header .logo {
                 position: relative;
                 text-decoration: none;
+                font-size: 35px;
                 letter-spacing: 10px;
                 font-weight: 100;
                 color: #fff;
                 transition: 0.6s;
-                top: 50%;
+                top: 0;
                 left: 0;
-                font-size: 35px;
                 transform: translate(0,0);
             }
 
             header ul {
                 display: flex;
                 left: 0;
-                top: 50%;
-                position: relative;
-                transition: 0.6s;
-                transform: translate(0,0);
-            }
-            header.sticky ul {
-                position: relative;
-                justify-content: center;
-                align-items: center;
                 top: 0;
-                left: 0;
-                transform: translate(0%,0%);
-            }
-
-                header ul li {
-                    position: relative;
-                    display: flex;
-                    list-style: none;
-                    justify-content: center;
-                    align-items: center;
-                    top: 50%;
-                    left: 0;
-                }
-
-                    header ul li a {
-                        position: relative;
-                        margin: 0 14px;
-                        letter-spacing: 2px;
-                        color: #fff;
-                        transition: 0.5s;
-                        letter-spacing: 2px;
-                        font-weight: 200;
-                        justify-content: center;
-                        align-items: center;
-                        text-decoration: none !important;
-                    }
-
-            header .infor {
+                transform: translate(-50%,0);
                 position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                top: 50%;
-                right: 0;
-                transform: translate(0,0);
+                transition: 0.1s;
             }
-
-        .header-sw-banner {
-            position: relative;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 30px;
-            background-color: #ddd;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-            .header-sw-banner i {
-                transform: rotate(180deg);
-            }
-
-            .header-sw-banner p {
-                position: relative;
-                top: 0;
-                left: 20%;
-                transform: translate(0,0);
-                font-size: 11px;
-            }
-
-        
     </style>
 
 
@@ -217,12 +140,8 @@
         </ul>
 
     </header>
-    <div class="header-sw-banner">
-        <p>
-            <i class="bi bi-truck"></i>
-            Free VN shipping for orders of 999.000 vnd or more.<span> Add 50.000 vnd to your order to qualify for free shipping within the VN.</span>
-        </p>
-    </div>
+
+
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -232,14 +151,16 @@
 
     <button onclick="scrollToTop()" id="scrollTop" title="go to top"> Scroll to top <i class="bi bi-arrow-right"></i></button>
     <footer id="footer-main">
-
     </footer>
 
     @*swpier*@
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Prooduct.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
