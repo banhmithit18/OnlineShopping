@@ -15,6 +15,31 @@
 
 <body>
     <style>
+        .footer-content {
+            position: relative;
+            display: inline-flex;
+            padding: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+        .quickLinks{
+            position : relative;
+            
+
+        }
+        .quickLinks h2{
+            position : relative;
+            font-weight:100;
+            font-size: 30px;
+
+
+        }
+        .quickLinks ul {
+            position: relative;
+            display:block;
+
+
+        }
     </style>
 
     <section>
@@ -49,13 +74,13 @@
     </section>
 
     <header id="header">
-        <a href="#" class="logo">Alle</a>
+        <a href="../Home/index" class="logo">Alle</a>
         <ul>
             <li>
                 <div class="dropdown">
-                    <a href="#"> NEW <i class="bi bi-caret-down"></i></a>
+                    <a href="../Product/Index"> NEW <i class="bi bi-caret-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="#"> Clothes </a>
+                        <a href="../Product/Index"> Clothes </a>
                         <a href="#"> link 2</a>
                         <a href="#"> link 3</a>
                     </div>
@@ -92,17 +117,15 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <button class="btn_shop"> Shop Now <i class="bi bi-arrow-right-circle"></i> </button>
+                <a href="../Product/index" class="btn_shop"> Shop Now <i class="bi bi-arrow-right-circle"></i> </a>
             </div>
             <div class="swiper-slide">
-                <button class="btn_shop"> Shop Now <i class="bi bi-arrow-right-circle"></i> </button>
+                <a href="../Product/index" class="btn_shop"> Shop Now <i class="bi bi-arrow-right-circle"></i> </a>
             </div>
             <div class="swiper-slide">
-                <button class="btn_shop"> Shop Now <i class="bi bi-arrow-right-circle"></i> </button>
+                <a href="../Product/index" class="btn_shop"> Shop Now <i class="bi bi-arrow-right-circle"></i> </a>
             </div>
-            <div class="swiper-slide">
-                <button class="btn_shop"> Shop Now <i class="bi bi-arrow-right-circle"></i> </button>
-            </div>
+           
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -120,6 +143,34 @@
 
     <button onclick="scrollToTop()" id="scrollTop" title="go to top"> Scroll to top <i class="bi bi-arrow-right"></i></button>
     <footer id="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="quickLinks">
+                    <h2> THE COMPANY </h2>
+                    <ul>
+                        <li><a href="../AboutUs/Index"> About Alle </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-content">
+                <div class="quickLinks">
+                    <h2> FOLLOW US </h2>
+                    <ul>
+                        <li><a href="../AboutUs/Index"><i class="bi bi-facebook"></i> Facebook </a></li>
+                        <li><a href="../AboutUs/Index"><i class="bi bi-instagram"></i> Instagram </a></li>
+                        <li><a href="../AboutUs/Index"><i class="bi bi-twitter"></i> Twiiter </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-content">
+                <div class="quickLinks">
+                    <h2> NEED HELP ? </h2>
+                    <ul>
+                        <li><a href="../AboutUs/Index"> Contact Us </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 
     @*swpier*@

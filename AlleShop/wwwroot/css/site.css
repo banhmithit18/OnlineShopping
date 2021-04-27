@@ -242,11 +242,16 @@ img.placement-icon {
 
 .btn_shop {
     position: relative;
-    justify-content: center;
-    align-items: center;
+    padding-top: 15px;
     width: 200px;
     height: 60px;
+    
+    text-decoration:none !important ;
+    text-align: center;
+    
+    justify-content:center;
     color: #fff;
+    font-size:15px;
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
     background-color: transparent;
@@ -255,6 +260,7 @@ img.placement-icon {
     .btn_shop:hover {
         background-color: #202020;
         border: #202020;
+        text-decoration: none!important ;
         box-shadow: inset;
     }
 
