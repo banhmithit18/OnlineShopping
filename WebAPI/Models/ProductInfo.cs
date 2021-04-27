@@ -30,6 +30,10 @@ namespace WebAPI.Models
         [Column("Active",TypeName ="bit")]
         public bool Active { get; set; }
 
+        [Column("ProductImage", TypeName = "varchar")]
+        [StringLength(100)]
+        public string ProductImage { get; set; }
+
         public ICollection<Orderdetail> Orderdetails { get; set; }
 
     }

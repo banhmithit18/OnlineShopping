@@ -32,9 +32,7 @@ namespace WebAPIUser.Models
         [Column("Price",TypeName ="float")]
         public float Price { get; set; }
 
-        [Column("ProductImage",TypeName ="varchar")]
-        [StringLength(100)]
-        public string ProductImage { get; set; }
+        
 
         [Column("CategoryID",TypeName ="int")]
         [ForeignKey("CategoryID")]
