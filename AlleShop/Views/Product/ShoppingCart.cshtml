@@ -1,0 +1,217 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_layoutMain";
+}
+<style>
+    .page {
+        padding: 70px 0 70px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page-content {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart {
+        width: 100%;
+        position: relative;
+        display: table;
+    }
+
+    .cart-header {
+        position: relative;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cart-header-item {
+        position: relative;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .cart-list {
+        position: relative;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cart-list-items {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .cart-list-price {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .cart-list-quantity {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .cart-list-total {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .cart-list-delete {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .bi-x-circle::before {
+        content: "\f623";
+        font-size: 20px;
+    }
+
+    .cart-totals {
+        list-style: none;
+        margin-left: 0;
+        margin-bottom: 1.5rem;
+        text-align: right;
+        width: 100%;
+    }
+    .cart-total {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+        padding: 25px;
+        list-style: none;
+    }
+    .cart-total-label {
+        text-align: center;
+        color: #202020;
+        font-size: 12px;
+        width:80%;
+    }
+
+    .cart-total-value {
+        text-align: right;
+        color: #202020;
+        font-size: 15px;
+        width:20%;
+    }
+    .coupon-code-add {
+        position: relative;
+        width: 100px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid;
+    }
+    .btn_continue {
+        background-color: #202020;
+        border-color: #202020;
+        color: #fff;
+    }
+
+</style>
+<div class="page">
+    <div class="page-content">
+        <table class="cart">
+            <thead class="cart-header">
+                <tr>
+                    <th class="cart-header-item"> ITEMS </th>
+                    <th class="cart-header-item"> INFORMATION </th>
+                    <th class="cart-header-item"> PRICE </th>
+                    <th class="cart-header-item"> QTY </th>
+                    <th class="cart-header-item"> TOTAL </th>
+                    <th class="cart-header-item">  </th>
+                </tr>
+            </thead>
+            <tbody class="cart-list">
+                <tr class="cart-item">
+                    <td class="cart-list-items">
+                        <img src="../img/gucci-shirt-red.png" width="100" height="100" />
+                    </td>
+                    <td class="cart-list-items-info">
+                        <h4 class="cart-list-items-name"> Gucci shirt</h4>
+                        <dl class="definitionList">
+                            <dt class="definitionList-key"> Size :</dt>
+                            <dd class="definitionList-value"> L </dd>
+                        </dl>
+                    </td>
+                    <td class="cart-list-price">
+                        <span class="cart-items-cost">$999</span>
+                    </td>
+                    <td class="cart-list-quantity">
+                        <div class="from-increment">
+                            <button class="btn_descrease">
+                                <i class="bi bi-caret-down"></i>
+                            </button>
+                            <input type="tel" value="0" min="1" pattern="[0-9]*" />
+                            <button class="btn_descrease">
+                                <i class="bi bi-caret-up"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="cart-list-total">
+                        <strong class="cart-item-value">$999</strong>
+                    </td>
+                    <td class="cart-list-delete">
+                        <a class="cart-move icon"><i class="bi bi-x-circle"></i> </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cart-totals">
+            <ul>
+                <li class="cart-total">
+                    <div class="cart-total-label">
+                        <strong> Subtotal </strong>
+                    </div>
+                    <div class="cart-total-value" ,">
+                        <strong> $999 </strong>
+                    </div>
+                </li>
+                <li class="cart-total">
+                    <div class="cart-total-label">
+                        <strong> Coupon Code </strong>
+                    </div>
+                    <div class="cart-total-value">
+                        <button class="coupon-code-add"> Add Coupon</button>
+                        <button class="coupon-code-cancel" style="display:none;">Cancel Coupon</button>
+                    </div>
+                    <div class="cart-form coupon-code" style="display: none;">
+                        <form class="form form--hiddenLabels coupon-form" method="post" action="/cart.php">
+                            <label class="form-label" for="couponcode">Enter your coupon code</label>
+                            <input class="form-input" data-error="Please enter your coupon code." id="couponcode" type="text" name="couponcode" value="" placeholder="Enter your coupon code">
+                            <input class="button button--primary button--small" type="submit" value="Apply">
+                            <input type="hidden" name="action" value="applycoupon">
+                        </form>
+                    </div>
+
+                </li>
+            </ul>
+
+        </div>
+        <div class="cart-action">
+            <a class="btn_continue" href="../Product/Index"> Continue Shopping</a>
+            <a class="btn_checkout" href=""> Check Out </a>
+
+        </div>
+
+    </div>
+</div>
+
+

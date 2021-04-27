@@ -14,6 +14,92 @@
 </head>
 <body>
     <style>
+        .footer-content {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin-left: 70px;
+        }
+
+        .quickLinks {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .quickLinks-content {
+            position: relative;
+            padding: 20px;
+        }
+
+            .quickLinks-content h2 {
+                letter-spacing: 2px;
+                position: relative;
+                font-weight: 400;
+                font-size: 15px;
+                color: #fff;
+            }
+
+            .quickLinks-content ul {
+                position: relative;
+                padding: 40px 100px;
+                justify-content: center;
+                align-items: center;
+            }
+
+                .quickLinks-content ul li {
+                    position: relative;
+                    list-style: none;
+                }
+
+        .about {
+            position: relative;
+            color: white;
+            letter-spacing: 2px;
+            margin-left: -98px;
+        }
+
+            .about:hover {
+                color: darkgrey;
+                text-decoration: none;
+            }
+
+        .follows {
+            color: white;
+        }
+
+            .follows:hover {
+                color: darkgrey;
+                text-decoration: none;
+            }
+
+        .Follow {
+            margin-left: -103px;
+        }
+
+        .need {
+            margin-left: -103px;
+        }
+
+        .needs {
+            color: white;
+        }
+
+            .needs:hover {
+                color: darkgrey;
+                text-decoration: none;
+            }
+        .placement-banner {
+            height: 35px;
+            background-color: #fff;
+            z-index: 100000;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            top: 0;
+        }
+
         header {
             position: sticky;
             display: flex;
@@ -49,18 +135,17 @@
                 position: relative;
                 transition: 0.1s;
             }
+
         .header-sw-banner {
             background-color: #f4f4f4;
             color: #202020;
             font-size: 12px;
-            text-align:center;
-            height:30px;
-            padding:5px;
+            text-align: center;
+            height: 30px;
+            padding: 5px;
             text-transform: uppercase;
             letter-spacing: .04643rem;
         }
-       
-        
     </style>
     <section id="banner">
         <div id="placement-banner" class="placement-banner">
@@ -100,15 +185,13 @@
                     <a href="../Product/Index"> NEW <i class="bi bi-caret-down"></i></a>
                     <div class="dropdown-content">
                         <a href="../Product/Index"> Clothes</a>
-                        <a href="#"> link 2</a>
-                        <a href="#"> link 3</a>
                     </div>
                 </div>
 
             </li>
-            <li>              
-                    <a href="../Product/Index"> Hot </a>
-                   
+            <li>
+                <a href="../Product/Index"> HOT </a>
+
             </li>
 
             <li>
@@ -123,7 +206,13 @@
 
             </li>
         </ul>
-    
+        <ul class="infor">
+            <li><a href="#"> Sign In  </a></li>
+            <li><a href="../Product/ShoppingCart"> <i class="bi bi-handbag"></i> Bag </a></li>
+
+
+
+        </ul>
 
     </header>
 
@@ -132,7 +221,7 @@
     <div class="container">
         <div class="header-sw-banner">
             <p>
-                <i class="bi bi-truck"  ></i>
+                <i class="bi bi-truck"></i>
                 <span>Alle ORDERS ARE DELIVERED WITH TAXES AND DUTIES PRE-PAID. FREE SHIPPING FOR ORDERS OF 999$. </span>
             </p>
         </div>
@@ -143,7 +232,34 @@
 
     <button onclick="scrollToTop()" id="scrollTop" title="go to top"> Scroll to top <i class="bi bi-arrow-right"></i></button>
     <footer id="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="quickLinks">
+                    <div class="quickLinks-content">
+                        <h2> THE COMPANY </h2>
+                        <ul>
+                            <li><a class="about" href="../AboutUs/Index"> About Alle </a></li>
+                        </ul>
+                    </div>
+                    <div class="quickLinks-content">
+                        <h2> FOLLOW US </h2>
+                        <ul class="Follow">
+                            <li><a class="follows" href="../AboutUs/Index"><i class="bi bi-facebook"></i> Facebook </a></li>
+                            <li><a class="follows" href="../AboutUs/Index"><i class="bi bi-instagram"></i> Instagram </a></li>
+                            <li><a class="follows" href="../AboutUs/Index"><i class="bi bi-twitter"></i> Twiiter </a></li>
+                        </ul>
+                    </div>
+                    <div class="quickLinks-content">
+                        <h2> NEED HELP ? </h2>
+                        <ul class="need">
+                            <li><a class="needs" href="../AboutUs/Index"> Contact Us </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
 
     @*swpier*@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

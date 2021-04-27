@@ -73,15 +73,18 @@ $(document).ready(function () {
     
 })
 
-//search
-$(".mySearch").on('keyup', function (e) {
-    if (e.key === 'Enter' || e.keyCode === 13) {
-        var value = $('#mySearch').val();
 
-       
-        
-    }
-});
+// add and cancel coupon
 
+$(document).ready(function () {
+    $(".coupon-code-add").click(function () {
+        var action_Cancel = document.getElementsByClassName("coupon-code-cancel");
+        action_Cancel.style.display = "block";
+    })
+    $(".coupon-code-cancel").click(function () {
+        var action_add = document.getElementsByClassName("coupon-code-add");
+        action_add.style.display = "none";
+    })
+})  
 
 
