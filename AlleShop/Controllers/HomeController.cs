@@ -22,6 +22,10 @@ namespace AlleShop.Controllers
         {
             return View();
         }
+        public IActionResult LogIn()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

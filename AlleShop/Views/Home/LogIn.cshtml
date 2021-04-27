@@ -1,0 +1,129 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_layoutMain";
+}
+<style>
+    .banner-page {
+        position: relative;
+        background: url(../img/login.jpeg);
+        width: 100%;
+        height: 600px;
+        margin: 10px auto 40px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+        .banner-page h2 {
+            position: relative;
+            top: 40%;
+            left: 0;
+            transform: translate(0,0);
+            font-size: 80px;
+            font-weight: 400;
+            color: white;
+        }
+    .login {
+        margin: 3rem auto 6rem;
+        max-width: 64.28571rem;
+        color: #000;
+        font-size: .85714rem;
+    }
+    .new-customer {
+        padding-left: .75rem;
+        padding-right: .75rem;
+        width: 50%;
+        float: left;
+    }
+    .login-title {
+        font-size: 1rem;
+        font-style: italic;
+        font-family: "Times New Roman",Times,serif;
+        padding: 1.42857rem 0;
+        border-bottom: 1px solid #e3e3e3;
+    }
+        .login-user, .login-password{
+            position:relative;
+            padding:5px;
+            justify-content:center;
+            align-items:center;
+        }
+            .login-user input {            
+                width: 50%;
+                height: 40px;          
+                padding: 5px;
+            }
+
+            .login-password input {
+                padding: 5px;
+                width: 50%;
+                height: 40px;
+               
+            }
+    
+    .btn_login {
+        position: relative;
+        width: 200px;
+        margin: 30px;
+        height: 50px;
+        text-decoration: none !important;
+        text-align: center;
+        justify-content: center;
+        color: black;
+        background-color: transparent;
+        font-size: 15px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+    .btn_login:hover{
+        background: black;
+        color : #fff;
+    }
+    .btn_newAccount {
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .forgotPassword {
+        color: black;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .forgotPassword:hover{
+        color:#ddd;
+    }
+
+</style>
+
+<div class="banner-page">
+    <h2> Log In </h2>
+</div>
+<div class="login">
+    <div class="login-content">
+        <div class="new-customer">
+            <div class="panel">
+                <div class="login-header">
+                    <h2 class="login-title">New Customers</h2>
+                </div>
+                <div class="login-body">
+                    <p class="new-customer-intro">If you don't have an Account,please create new one</p>
+                    <a href="" class="btn_newAccount"> Click me! </a>
+                </div>
+            </div>
+        </div>
+        <div class="login-user">
+            <input type="text" placeholder="Email" />
+        </div>
+        <div class="login-password">
+            <input type="password" placeholder="Password" />
+        </div>
+        <input class="btn_login" type="submit" value="Log In">
+        <a href="" class="forgotPassword" > Forgot Password ? </a>
+
+    </div>
+</div>
+
+
