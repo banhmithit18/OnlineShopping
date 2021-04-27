@@ -1,4 +1,5 @@
-﻿
+﻿var currentLocation = 0;
+
 
 $(document).ready(function () {
 
@@ -115,3 +116,13 @@ $(document).ready(function () {
 
     });
 });
+
+document.getElementsByClassName("product-grid").addEventListener("scroll", myFunction);
+function myFunction() {
+    var doc = document.documentElement;
+    var nextLocation = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
+    if (nextLocation - currentLocation > 200) {
+        alert(nextLocation);
+        currentLocation = nextLocation;
+    }
+}
