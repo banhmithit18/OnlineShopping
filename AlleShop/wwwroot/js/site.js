@@ -74,11 +74,14 @@ $(document).ready(function () {
 })
 
 //search
-$(document).ready(function () {
-    $(".icon").click(function () {
-        $(".search").toggleClass('active'); 
-    })
-})
+$(".mySearch").on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+        var value = $('#mySearch').val();
+
+       
+        
+    }
+});
 
 
 

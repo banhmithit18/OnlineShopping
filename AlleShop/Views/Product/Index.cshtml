@@ -8,6 +8,7 @@
     .container {
         max-width: 1500px;
     }
+
     .product {
         position: relative;
         float: left;
@@ -76,12 +77,12 @@
             font-size: 22px;
         }
 
-    .details label {
-        display: block;
-        margin-top: 5px;
-        font-weight: 400;
-        font-size: 20px;
-    }
+        .details label {
+            display: block;
+            margin-top: 5px;
+            font-weight: 400;
+            font-size: 20px;
+        }
 
     ul {
         display: flex;
@@ -178,21 +179,35 @@
         display: inline-block;
         padding: 0 20px;
     }
-    .sort{
-        position:relative;
-        display:flex;
-        justify-content:left;
-        align-items:center;
-        padding:10px;
 
-    }
-    .sort-content{
-        position:relative;
-        padding:10px;
+    .sort {
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding: 10px;
     }
 
+    .sort-content {
+        position: relative;
+        padding: 10px;
+    }
 </style>
+<ul class="infor">
+    <li><a href="#"> Sign In  </a></li>
+    <li><a href="#"> <i class="bi bi-handbag"></i> Bag </a></li>
+    <li>
+        <div class="search-dropdown">
+            <a href="#"> <i class="bi bi-search"></i> </a>
+            <div class="search-dropdown-content">
+                <input type="text" placeholder="Search.." id="mySearch ">
+            </div>
+        </div>
 
+    </li>
+
+
+</ul>
 
 @* information product*@
 <div class="breadcrumbs">
@@ -204,33 +219,41 @@
 <div class="sort">
     <div class="sort-content">
         <label> Brand :</label>
-        <select style=" border:none;">
-            <option>Price tang</option>
-            <option>Name</option>
-            <option>gia giam</option>
+        <select id="sort-brand" style=" border:none;">
+            <option>All</option>
+
+
         </select>
     </div>
     <div class="sort-content">
         <label> Price :</label>
-        <select style=" border:none;">
-            <option>100$ - 300$</option>
-            <option>300$ - 500$</option>
+        <select id="sort-price" style=" border:none;">
+            <option>All</option>
+            <option>0$ - 100$</option>
+            <option>100$ - 500$</option>
             <option>500$ -10004</option>
         </select>
     </div>
     <div class="sort-content">
+        <label> Category :</label>
+        <select id="sort-category" style=" border:none;">
+            <option>All</option>
+
+
+        </select>
+    </div>
+    <div class="sort-content">
         <label> Type :</label>
-        <select style=" border:none;">
-            <option> GUCCI </option>
-            <option> LUOIS VUITON</option>
-            <option> H&M  </option>
+        <select id="sort-type" style=" border:none;">
+            <option>All</option>
+
         </select>
     </div>
 
 </div>
 <div class="product-grid">
-    
-           
+
+
 </div>
 
 <script></script>
