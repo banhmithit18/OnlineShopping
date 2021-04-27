@@ -99,27 +99,19 @@ header {
             align-items:center;
             top: 0;
             left:0;
-            transform: translate(0%,0%);
+            transform: translate(-50%,0%);
         }
 
-/*.placement-banner {
+.placement-banner {
     height: 35px;
     background-color: #fff;
     z-index: 100000;
-    position: fixed;
+    position: sticky;
+    overflow:hidden;
     width: 100%;
     top: 0;
 }
 
-.btn_close {
-    width: 35px;
-    border-radius:30px;
-    position: absolute;
-    right: 0;
-    top: 5px;
-    cursor: pointer;
-    z-index: 100;
-}
 
 .placement-square1 {
     width: 35px;
@@ -141,7 +133,7 @@ header {
 }
 
 .placement-wrapper.en {
-    width: 100%;
+    width: 220%;
 }
 
 .placement-animated1-right.en {
@@ -155,12 +147,12 @@ header {
 }
 
     .placement-wrapper.en {
-        width: 100%;
+        width: 220%;
     }
 
 .placement-animated2-right.en {
     animation: marquee_en 30s linear 25s infinite;
-    transform: translateX(-100%);
+    transform: translateX(-220%);
 }
 
 .placement-wrapper {
@@ -190,37 +182,8 @@ img.placement-icon {
     100% {
         left: -100%;
     }
-}*/
-.marquee {
-    height: 25px;
-    width: 420px;
-    overflow: hidden;
-    position: relative;
 }
 
-    .marquee div {
-        display: block;
-        width: 200%;
-        height: 30px;
-        position: absolute;
-        overflow: hidden;
-        animation: marquee 5s linear infinite;
-    }
-
-    .marquee span {
-        float: left;
-        width: 50%;
-    }
-
-@keyframes marquee {
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: -100%;
-    }
-}
 
 
 .swiper-container {
