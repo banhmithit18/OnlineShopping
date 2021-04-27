@@ -40,16 +40,19 @@ body {
     background-color: #f6f6f6;
     min-width: 230px;
     overflow: auto;
-    border: 1px solid #ddd;
     z-index: 1;
     left:-200px;
+    border:1px solid darkgrey;
 }
     .search-dropdown-content input {
-        border: none;
+        border:none;
         width: 100%;
         overflow: visible;
         height: 40px;
         padding: 5px;
+        outline:none;
+       
+      
     }
 .search-dropdown:hover .search-dropdown-content{
     display:block;
@@ -338,6 +341,7 @@ img.placement-icon {
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    margin-left: -60px;
 }
 
     .dropdown-content a {
@@ -348,18 +352,19 @@ img.placement-icon {
         top:0;
         text-decoration: none;
         display: block;
+        text-align:center;
     }
 
         .dropdown-content a:hover {
-            
             background-color: #ddd;
-            transition:0.2s;
+            transition: 0.2s;
+            color: white;
         }
 
 .dropdown:hover .dropdown-content {
     display: block;
- 
 }
+
 a:hover{
     color:#ddd;
     transition:0.2s;

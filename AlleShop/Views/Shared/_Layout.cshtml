@@ -20,6 +20,7 @@
             position: relative;
             justify-content: center;
             align-items: center;
+            margin-left: 70px;
         }
 
         .quickLinks {
@@ -47,24 +48,49 @@
                 padding: 40px 100px;
                 justify-content: center;
                 align-items: center;
+                
             }
 
                 .quickLinks-content ul li {
                     position: relative;
                     list-style: none;
+                   
                 }
 
-                    .quickLinks-content ul li a {
-                        position: relative;
-                        text-decoration: none;
-                        color: #202020;
-                        letter-spacing: 2px;
-                    }
+        .about {
+            position: relative;
 
-                    .quickLinks-content ul li:hover a {
-                        background-color: red;
-                        color: #fff;
-                    }
+            color:white;
+            letter-spacing: 2px;
+            margin-left: -98px;
+        }
+        .about:hover{
+            color:darkgrey;
+            text-decoration:none;
+        }
+        .follows {
+            color: white;
+        }
+            .follows:hover {
+                color: darkgrey;
+                text-decoration: none;
+            }
+        .Follow {
+            margin-left: -103px;
+        }
+        .need{
+            margin-left:-103px;
+        }
+        .needs{
+            color:white;
+        }
+            .needs:hover {
+                color: darkgrey;
+                text-decoration: none;
+            }
+           
+
+       
     </style>
 
     <section>
@@ -184,21 +210,21 @@
                     <div class="quickLinks-content">
                         <h2> THE COMPANY </h2>
                         <ul>
-                            <li><a href="../AboutUs/Index"> About Alle </a></li>
+                            <li><a class="about" href="../AboutUs/Index"> About Alle </a></li>
                         </ul>
                     </div>
                     <div class="quickLinks-content">
                         <h2> FOLLOW US </h2>
-                        <ul>
-                            <li><a href="../AboutUs/Index"><i class="bi bi-facebook"></i> Facebook </a></li>
-                            <li><a href="../AboutUs/Index"><i class="bi bi-instagram"></i> Instagram </a></li>
-                            <li><a href="../AboutUs/Index"><i class="bi bi-twitter"></i> Twiiter </a></li>
+                        <ul class="Follow">
+                            <li><a class="follows" href="../AboutUs/Index"><i class="bi bi-facebook"></i> Facebook </a></li>
+                            <li><a  class="follows"href="../AboutUs/Index"><i class="bi bi-instagram"></i> Instagram </a></li>
+                            <li><a  class="follows"href="../AboutUs/Index"><i class="bi bi-twitter"></i> Twiiter </a></li>
                         </ul>
                     </div>
                     <div class="quickLinks-content">
                         <h2> NEED HELP ? </h2>
-                        <ul>
-                            <li><a href="../AboutUs/Index"> Contact Us </a></li>
+                        <ul class="need">
+                            <li><a class="needs" href="../AboutUs/Index"> Contact Us </a></li>
                         </ul>
                     </div>
                 </div>
