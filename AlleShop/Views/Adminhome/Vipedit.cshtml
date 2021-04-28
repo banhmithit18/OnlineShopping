@@ -3,33 +3,104 @@
     ViewData["Title"] = "Vipedit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<form action="/" method="post">
+<script type="text/javascript">
+
+            $(document).ready(function () {
+
+
+                var url = window.location.pathname;
+                var id = url.substring(url.lastIndexOf('/') + 1);
+                $.ajax({
+
+                    url: 'http://localhost:8085/api/Vipranks/'+ id ,
+                    type: 'Get',
+                    dataType: 'json',
+                    contentType: "application/json; charset=utf8",
+
+                    success: function (data) {
+                        JSON.stringify(data);
+                        document.getElementById('namevip').value = data.vipName;
+                        document.getElementById('pricediscount').value = data.discountPrice;
+                        document.getElementById('amount').value = data.amount;
+                        
+
+
+                    },
+                    error: function (data) {
+                        alert('error');
+
+                    }
+                });
+                $('#btnvip').click(function () {
+
+                    var Vip = new Object();
+                    var checkbox = document.getElementById("active");
+                    Vip.ID = id;
+                    Vip.VipName = $('#namevip').val();
+                    Vip.DiscountPrice = $('#pricediscount').val();
+                    Vip.Amount = $('#amount').val();
+                    Vip.UserInfoID = null
+
+                    if (checkbox.checked) {
+                        Vip.Active = true;
+                    } else {
+                        Vip.Active = false;
+                    };
+
+
+
+
+
+
+                    var x = JSON.stringify(Vip);
+
+                    $.ajax({
+
+                        url: 'http://localhost:8085/api/Vipranks/'+Vip.ID,
+                        type: 'PUT',
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf8",
+                        data: x,
+                        success: function (data) {
+                            alert('sucsses');
+                            window.location("Viplist.cshtml");
+
+                        },
+                        error: function (data) {
+                            alert('error');
+
+                        }
+                    });
+                });
+            });
+</script>
+<form >
     <div class="vipname">
         <div class="textvips">
             Name
         </div>
-        <input class="inputvip" type="text" />
+        <input class="inputvip" type="text"  id="namevip"name="namevip"/>
     </div>
     <div class="pricediscounts">
         <div class="textvip">
             Price Discount
         </div>
-        <input class="inputvip" type="text" />
+        <input class="inputvip" type="text" id="pricediscount" name="pricediscount" />
     </div>
     <div class="amount">
         <div class="textamount">
             Amount
         </div>
-        <input class="inputvip" type="text" />
+        <input class="inputvip" type="text" id="amount" name="amount"/>
     </div>
     <div class="activevip">
         <div class="textvipcheck">
             Active
         </div>
-        <input class="inputchecks" type="checkbox" />
+        <input class="inputchecks" type="checkbox"id="active" name="active"/>
     </div>
     <div class="buttonvip">
-        <button class="btnvip">
+        <button class="btnvip" id="btnvip">
             Update Viprank
         </button>
     </div>

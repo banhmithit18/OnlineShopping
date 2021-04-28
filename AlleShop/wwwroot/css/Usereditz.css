@@ -1,7 +1,7 @@
 ﻿@media only screen and (max-width:1366px){
-    .nameuser{
-        margin-top:50px;
-        margin-left:50px;
+    .nameuser {
+        margin-top: 28px;
+        margin-left: 50px;
     }
     .useredit {
         font-stretch: ultra-condensed;
@@ -23,7 +23,7 @@
         margin-bottom: 1px;
     }
     .nameusers {
-        margin-top: -393px;
+        margin-top: -419px;
         margin-left: 520px;
     }
     #genders {
@@ -39,12 +39,11 @@
         color:grey;
     }
     .nameaddress {
-        margin-top: 54px;
+        margin-top: 34px;
         margin-left: 500px;
-        
     }
     .nameamount {
-        margin-top: 50px;
+        margin-top: 25px;
         margin-left: 500px;
     }
     .buttonuseredit {

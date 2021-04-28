@@ -76,5 +76,18 @@
         margin-left: 376px;
         margin-top: 30px;
     }
+    .editcate {
+        margin-top: 20px;
+        margin-left: 459px;
+    }
 
+    .editscate {
+        color: #a5a5a5;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .editscate:hover {
+            color: black;
+        }
 }

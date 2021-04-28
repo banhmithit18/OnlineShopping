@@ -183,12 +183,12 @@
         margin-left: 100px;
     }
     .activeproduct {
-        margin-top: 45px;
-        margin-left: 658px;
+        margin-top: -148px;
+        margin-left: 620px;
     }
     .logo {
         margin-left: 74px;
-        margin-top: 57px;
+        margin-top: 163px;
     }
     .description {
         margin-top: -82px;
@@ -201,5 +201,29 @@
     .buttonpro {
         margin-top: 22px;
         margin-left: 510px;
+    }
+    #typepr {
+        border-top-style: hidden;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        border-bottom: 1px solid #a5a5a5;
+        outline: none;
+        font-stretch: ultra-condensed;
+        font-size: 15px;
+        font-weight: 100;
+        margin-left: 43px;
+        color: grey;
+    }
+    #brandpr {
+        border-top-style: hidden;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        border-bottom: 1px solid #a5a5a5;
+        outline: none;
+        font-stretch: ultra-condensed;
+        font-size: 15px;
+        font-weight: 100;
+        margin-left: 39px;
+        color: grey;
     }
 }

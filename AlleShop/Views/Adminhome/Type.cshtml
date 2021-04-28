@@ -3,12 +3,60 @@
     ViewData["Title"] = "Type";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<form action="/" method="post">
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btntype').click(function () {
+            var Typename = new Object();
+            var checkbox = document.getElementById("active");
+            Typename.TypeName = $('#nametype').val();
+            Typename.Active = null;
+            Typename.ProductID = null
+            if (checkbox.checked) {
+                Typename.Active = true;
+            } else {
+                Typename.Active = false;
+            };
+            
+
+
+
+
+
+            var x = JSON.stringify(Typename);
+            
+
+            $.ajax({
+                url: 'http://localhost:8085/api/Types',
+                type: 'POST',
+                data: x,
+                contentType: "application/json; charset=utf8",
+                dataType: 'json',
+                success: function (data) {
+
+                    alert("Success");
+
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            })
+        })
+    })
+
+
+
+
+
+
+
+
+</script>
+<form >
     <div class="nametype">
         <div class="texttypes">
             Type Name
         </div>
-        <input class="inputtype" type="text" name="nametype" />
+        <input class="inputtype" type="text" id="nametype" name="nametype" />
     </div>
     <div class="checkboxtype">
         <div class="texttype">
@@ -16,12 +64,12 @@
         </div>
         <br />
         <div class="Checkbox">
-            <input class="checktype" type="checkbox" name="active" />
+            <input class="checktype" type="checkbox" id="active" name="active" />
         </div>
 
     </div>
     <div class="buttontype">
-        <button class="btntype">
+        <button class="btntype" id="btntype"name="btntype">
             ADD Type
         </button>
     </div>

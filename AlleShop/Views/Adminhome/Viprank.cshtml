@@ -3,33 +3,83 @@
     ViewData["Title"] = "Viprank";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<form action="/" method="post">
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnviprank').click(function () {
+            var VipRank = new Object();
+            var checkbox = document.getElementById("active");
+            VipRank.VipName = $('#vipname').val();
+            VipRank.DiscountPrice = $('#pricediscount').val();
+            VipRank.Amount = $('#amount').val();
+            VipRank.Active = null;
+            VipRank.UserInfoID = null;
+            if (checkbox.checked) {
+                VipRank.Active = true;
+            } else {
+                VipRank.Active = false;
+            };
+
+
+
+
+
+
+            var x = JSON.stringify(VipRank);
+
+            alert(x);
+            $.ajax({
+                url: 'http://localhost:8085/api/VipRanks',
+                type: 'POST',
+                data: x,
+                contentType: "application/json; charset=utf8",
+                dataType: 'json',
+                success: function (data) {
+
+                    alert("Success");
+
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            })
+        })
+    })
+
+
+
+
+
+
+
+
+</script>
+<form >
     <div class="vipname">
         <div class="textvips">
             Name
         </div>
-        <input class="inputvip" type="text" />
+        <input class="inputvip" type="text" id="vipname",name="vipname" />
     </div>
     <div class="pricediscounts">
         <div class="textvip">
             Price Discount
         </div>
-        <input class="inputvip" type="text" />
+        <input class="inputvip" type="text" id="pricediscount" name="pricediscount"/>
     </div>
     <div class="amount">
         <div class="textamount">
             Amount
         </div>
-        <input class="inputvip" type="text" />
+        <input class="inputvip" type="text" id="amount" name="amount"/>
     </div>
     <div class="activevip">
         <div class="textvipcheck">
             Active
         </div>
-        <input class="inputchecks" type="checkbox" />
+        <input class="inputchecks" type="checkbox" id="acitve" name="active" />
     </div>
     <div class="buttonvip">
-        <button class="btnvip">
+        <button class="btnvip" id="btnviprank" name="btnviprank">
             Add Viprank
         </button>
     </div>

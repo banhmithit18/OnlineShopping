@@ -16,6 +16,14 @@ namespace AlleShop.Controllers
         {
             return View();
         }
+        public IActionResult Categorylist()
+        {
+            return View();
+        }
+        public IActionResult Categoryedit()
+        {
+            return View();
+        }
         public IActionResult Product()
         {
             return View();
@@ -68,7 +76,7 @@ namespace AlleShop.Controllers
         {
             return View();
         }
-        public IActionResult Brandedit()
+        public IActionResult Brandedit(int id)
         {
             return View();
         }

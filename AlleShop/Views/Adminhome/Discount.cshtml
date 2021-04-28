@@ -3,27 +3,75 @@
     ViewData["Title"] = "Discount";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<form action="/" method="post">
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#adddiscount').click(function () {
+            var DiscountCode = new Object();
+            var checkbox = document.getElementById("active");
+            DiscountCode.DiscountCode = $('#discountcode').val();
+            DiscountCode.DiscountPrice = $('#pricediscount').val();
+            DiscountCode.OrderID = null;
+            if (checkbox.checked) {
+                DiscountCode.Active = true;
+            } else {
+                DiscountCode.Active = false;
+            };
+            
+
+
+
+
+
+            var x = JSON.stringify(DiscountCode);
+
+
+            $.ajax({
+                url: 'http://localhost:8085/api/Discounts',
+                type: 'POST',
+                data: x,
+                contentType: "application/json; charset=utf8",
+                dataType: 'json',
+                success: function (data) {
+
+                    alert("Success");
+
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            })
+        })
+    })
+
+
+
+
+
+
+
+
+</script>
+<form  >
     <div class="codediscount">
         <div class="textdis">
             Code Discount
         </div>
-        <input class="inputdis" type="text" />
+        <input class="inputdis" type="text" id="discountcode" name="discountcode" />
     </div>
     <div class="pricediscount">
         <div class="textdis">
             Price Discount
         </div>
-        <input class="inputdis" type="text" />
+        <input class="inputdis" type="text" id="pricediscount" name="pricediscount"/>
     </div>
     <div class="activediscount">
         <div class="textdisac">
              Active
         </div>
-        <input class="inputcheck" type="checkbox" />
+        <input class="inputcheck" type="checkbox" id="active",name="active" />
     </div>
     <div class="buttondiscount">
-        <button class="btndis">
+        <button class="btndis" id="adddiscount" name="adddiscount">
             Add Discount
         </button>
     </div>

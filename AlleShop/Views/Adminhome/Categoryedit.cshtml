@@ -1,25 +1,25 @@
 ﻿
 @{
-    ViewData["Title"] = "Brandedit";
+    ViewData["Title"] = "Categoryedit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <script type="text/javascript">
 
             $(document).ready(function () {
-               
-                
+
+
                 var url = window.location.pathname;
                 var id = url.substring(url.lastIndexOf('/') + 1);
                 $.ajax({
 
-                    url: 'http://localhost:8085/api/Brands/'+ id ,
+                    url: 'http://localhost:8085/api/Categories/'+ id ,
                     type: 'Get',
                     dataType: 'json',
                     contentType: "application/json; charset=utf8",
-                
+
                     success: function (data) {
                         JSON.stringify(data);
-                        document.getElementById('namebrand').value = data.nameBrand;
+                        document.getElementById('category').value = data.categoryName;
                         
 
 
@@ -29,58 +29,55 @@
 
                     }
                 });
-                $('#brandedit').click(function () {
-                    
-                    var Brandedit = new Object();
+                $('#Submit').click(function () {
+
+                    var Categoryedit = new Object();
                     var checkbox = document.getElementById("active");
-                    Brandedit.ID = id;
-                    Brandedit.NameBrand = $('#namebrand').val();
-                    Brandedit.Active = null;
-                    Brandedit.Product = null;
-                    
+                    Categoryedit.ID = id;
+                    Categoryedit.CategoryName = $('#category').val();
+                    Categoryedit.Active = null;
+                    Categoryedit.Product = null;
+
                     if (checkbox.checked) {
-                        Brandedit.Active = true;
+                        Categoryedit.Active = true;
                     } else {
-                        Brandedit.Active = false;
+                        Categoryedit.Active = false;
                     };
-                    Brandedit.Product = null;
-                    /*Category.Active = $('#active').click(1);*/
-                    //Category.active = $('#active').click(true);//
+                    Categoryedit.Product = null;
+                    
 
 
 
 
-                    var x = JSON.stringify(Brandedit);
+                    var x = JSON.stringify(Categoryedit);
                     
                     $.ajax({
 
-                        url: 'http://localhost:8085/api/Brands/'+Brandedit.ID,
+                        url: 'http://localhost:8085/api/Categories/'+Categoryedit.ID,
                         type: 'PUT',
                         dataType: 'json',
                         contentType: "application/json; charset=utf8",
                         data: x,
                         success: function (data) {
                             alert('sucsses');
-                            window.location("Brandlist.cshtml");
-                            
                         },
                         error: function (data) {
                             alert('error');
-                           
+
                         }
                     });
                 });
             });
 </script>
-<form >
-    <div class="namebrand">
-        <div class="textbrands">
-            Brand Name
+<form>
+    <div class="namecategory">
+        <div class="text">
+            Category Name
         </div>
-        <input class="inputbrand" type="text" id="namebrand" name="namebrand" />
+        <input class="inputcate" type="text" id="category" name="category" />
     </div>
-    <div class="checkboxbrand">
-        <div class="textbrand">
+    <div class="checkbox">
+        <div class="text">
             Active
         </div>
         <br />
@@ -89,10 +86,9 @@
         </div>
 
     </div>
-    <div class="buttonbrand" >
-        <button class="btnbrand"id="brandedit"  >
-            Update Brand
+    <div class="buttoncate"  >
+        <button class="btnadd" name="Submit" id="Submit" value="Save Data">
+            Update CATEGORY
         </button>
     </div>
 </form>
-

@@ -3,12 +3,63 @@
     ViewData["Title"] = "Brand";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<form action="/" method="post">
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#addbrand').click(function () {
+            var Brandname = new Object();
+            var checkbox = document.getElementById("active");
+            Brandname.NameBrand = $('#namebrand').val();
+            Brandname.Active = null;
+            Brandname.Product = null
+            if (checkbox.checked) {
+                Brandname.Active = true;
+            } else {
+                Brandname.Active = false;
+            };
+            Brandname.Product = null;
+       
+
+
+
+
+            var x = JSON.stringify(Brandname);
+
+
+            $.ajax({
+                url: 'http://localhost:8085/api/Brands',
+                type: 'POST',
+                data: x,
+                contentType: "application/json; charset=utf8",
+                dataType: 'json',
+                success: function (data) {
+
+                    alert("Success");
+
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            })
+        })
+    })
+
+
+
+
+
+
+
+
+</script>
+<form >
     <div class="namebrand">
-        <div class="textbrands">
+        <div class="textbrands"name="brandname">
             Brand Name
         </div>
-        <input class="inputbrand" type="text" name="namebrand" />
+        <input class="inputbrand" type="text" name="namebrand" id="namebrand" />
     </div>
     <div class="checkboxbrand">
         <div class="textbrand">
@@ -16,11 +67,11 @@
         </div>
         <br />
         <div class="Checkbox">
-            <input class="check" type="checkbox" name="active" />
+            <input class="check" type="checkbox" name="active" id="active" />
         </div>
 
     </div>
-    <div class="buttonbrand">
+    <div class="buttonbrand" name="addbrand" id="addbrand">
         <button class="btnbrand">
             ADD Brand
         </button>

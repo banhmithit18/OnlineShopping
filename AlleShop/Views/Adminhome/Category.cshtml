@@ -2,13 +2,68 @@
 @{
     ViewData["Title"] = "Category";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    
 }
-<form action="/" method="post">
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Submit').click(function () {
+            var Category = new Object();
+            var checkbox = document.getElementById("active");
+            Category.CategoryName = $('#category').val();
+            Category.Active = null;
+            Category.Product = null;
+            if (checkbox.checked) {
+                Category.Active = true;
+            } else {
+                Category.Active = false;
+            };
+            Category.Product = null;
+            /*Category.Active = $('#active').click(1);*/
+            //Category.active = $('#active').click(true);//
+
+
+
+
+            var x = JSON.stringify(Category);
+
+
+            $.ajax({
+                url: 'http://localhost:8085/api/Categories',
+                type: 'POST',
+                data: x,
+                contentType: "application/json; charset=utf8",
+                dataType: 'json',
+                success: function (data) {
+
+                    alert("Success");
+
+                },
+                error: function (data) {
+                    alert("erro");
+                }
+            })
+        })
+    })
+
+
+
+
+
+
+
+
+</script>
+
+<form>
     <div class="namecategory">
         <div class="text">
             Category Name
         </div>
-        <input class="inputcate" type="text" name="namecategory" />
+        <input class="inputcate" type="text" id="category" name="category" />
     </div>
     <div class="checkbox">
         <div class="text">
@@ -16,13 +71,16 @@
         </div>
         <br />
         <div class="Checkbox">
-            <input class="check" type="checkbox" name="active" />
+            <input class="check" type="checkbox" id="active" name="active" />
         </div>
 
     </div>
-    <div class="buttoncate">
-        <button class="btnadd">
+    <div class="buttoncate" action="" method="post">
+        <button class="btnadd" name="Submit" id="Submit" value="Save Data">
             ADD CATEGORY
         </button>
+    </div>
+    <div class="editcate">
+        <a class="editscate" href="@Url.Action("Categorylist")">Edit</a>
     </div>
 </form>

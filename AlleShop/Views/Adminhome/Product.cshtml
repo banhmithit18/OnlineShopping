@@ -4,63 +4,132 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<form action="/" method="post">
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#addpro').click(function () {
+            var Addpro = new Object();
+            var checkbox = document.getElementById("active");
+            Addpro.ProductName = $('#namepr').val();
+            Addpro.Price = $('#pricepr').val();
+            Addpro.Descriptions = $('#desc').val();
+            Addpro.ProductUpdateDate = Date.now();
+            Addpro.BrandID = $('#idbrand').val();
+            Addpro.TypeID = $('#idtype').val();
+            Addpro.ProductImage = $('#image').val();
+
+            Addpro.Active = null;
+           
+            if (checkbox.checked) {
+                Addpro.Active = true;
+            } else {
+                Addpro.Active = false;
+            };
+            var x = JSON.stringify(Addpro);
+
+            alert(x);
+            $.ajax({
+                url: 'http://localhost:8085/api/Products',
+                type: 'POST',
+                data: x,
+                contentType: "application/json; charset=utf8",
+                dataType: 'json',
+                success: function (data) {
+
+                    alert("Success");
+
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            })
+        })
+    })
+
+
+
+
+
+
+
+
+</script>
+<form >
     <div class="nameproduct">
         <div class="textpr">
             Name
         </div>
-        <input class="input" type="text" name="namepr" />
+        <input class="input" type="text" id="namepr" name="namepr" />
     </div>
     <div class="priceproduct">
         <div class="textpr">
             Price
         </div>
-        <input class="input" type="text" name="pricepr" />
+        <input class="input" type="text" id="pricepr" name="pricepr" />
     </div>
     <div class="brandproduct">
         <div class="textpr">
             Brand
         </div>
-        <input class="input" type="text" name="brandpr" />
+        <select name="brandpr" id="brandpr">
+            <option value="" disabled selected hidden>Select brand</option>
+
+        </select>
     </div>
     <div class="typeproduct">
         <div class="textpr">
             Type
         </div>
-        <input class="input" type="text" name="typepr" />
+        <select name="typepr" id="typepr">
+            <option value="" disabled selected hidden>Select Type</option>
+
+        </select>
+        <script>
+            var brand = [];
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8085/api/brands",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var data;
+                    //alert(JSON.stringify(data));
+                    $.each(data, function (y, item2) {
+                        brand.push(item2.nameBrand)
+                        var idbrand = brand.push(item2.ID);
+                    })
+                    for (var index = 0; index < brand.length; index++) {
+                        data = data + '<option>' + brand[index] + '</option>';
+                    }
+                    $("#brandpr").append(data);
+                    brand = [];
+                }
+            });
+        </script>
+        <script>
+            var Types = [];
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8085/api/Types",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var data;
+                    //alert(JSON.stringify(data));
+                    $.each(data, function (y, item2) {
+                        Types.push(item2.typeName)
+                        var idtype = Types.push(item2.TypeID);
+                    })
+                    for (var index = 0; index < Types.length; index++) {
+                        data = data + '<option>' + Types[index] + '</option>';
+                    }
+                    $("#typepr").append(data);
+                    Types = [];
+                }
+            });
+        </script>
+
     </div>
-    <div class="dateproduct">
-        <div class="textprs">
-            Date update
-        </div>
-        <select name="day" id="day">
-            @{
-                <option value="" disabled selected hidden>Day</option>
-                for (var i = 1; i <= 31; i++)
-                {
-                    <option>@i</option>
-                }
-            }
-        </select>
-        <select name="month" id="month">
-            <option value="" disabled selected hidden>Month</option>
-            @{
-                for (var i = 1; i <= 12; i++)
-                {
-                    <option>@i</option>
-                }
-            }
-        </select>
-        <select name="Yera" id="Year">
-            <option value="" disabled selected hidden>Year</option>
-            @{
-                for (var i = 1830; i <= 2021; i++)
-                {
-                    <option>@i</option>
-                }
-            }
-        </select>
-    </div>
+    
     <div class="activeproduct">
         <div class="textpr">
             Active
@@ -74,11 +143,11 @@
     </div>
 
     <div class="description">
-        <textarea placeholder="Description" class="des">
+        <textarea placeholder="Description" class="des" id="desc" name="desc">
     </textarea>
     </div>
     <div class="buttonpro">
-        <button class="btnaddpro">
+        <button class="btnaddpro" id="addpro" name="addpro">
             Add Product
         </button>
     </div>
@@ -88,4 +157,6 @@
         var image = document.getElementById('output');
         image.src = URL.createObjectURL(event.target.files[0]);
     };
+
 </script>
+
