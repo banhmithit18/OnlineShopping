@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewData["Title"] = "Categoryedit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script type="text/javascript">
+
+            $(document).ready(function () {
+
+
+                var url = window.location.pathname;
+                var id = url.substring(url.lastIndexOf('/') + 1);
+                $.ajax({
+
+                    url: 'http://localhost:8085/api/Categories/'+ id ,
+                    type: 'Get',
+                    dataType: 'json',
+                    contentType: "application/json; charset=utf8",
+
+                    success: function (data) {
+                        JSON.stringify(data);
+                        document.getElementById('category').value = data.categoryName;
+                        
+
+
+                    },
+                    error: function (data) {
+                        alert('error');
+
+                    }
+                });
+                $('#Submit').click(function () {
+
+                    var Categoryedit = new Object();
+                    var checkbox = document.getElementById("active");
+                    Categoryedit.ID = id;
+                    Categoryedit.CategoryName = $('#category').val();
+                    Categoryedit.Active = null;
+                    Categoryedit.Product = null;
+
+                    if (checkbox.checked) {
+                        Categoryedit.Active = true;
+                    } else {
+                        Categoryedit.Active = false;
+                    };
+                    Categoryedit.Product = null;
+                    
+
+
+
+
+                    var x = JSON.stringify(Categoryedit);
+                    
+                    $.ajax({
+
+                        url: 'http://localhost:8085/api/Categories/'+Categoryedit.ID,
+                        type: 'PUT',
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf8",
+                        data: x,
+                        success: function (data) {
+                            alert('sucsses');
+                        },
+                        error: function (data) {
+                            alert('error');
+
+                        }
+                    });
+                });
+            });
+</script>
+<form>
+    <div class="namecategory">
+        <div class="text">
+            Category Name
+        </div>
+        <input class="inputcate" type="text" id="category" name="category" />
+    </div>
+    <div class="checkbox">
+        <div class="text">
+            Active
+        </div>
+        <br />
+        <div class="Checkbox">
+            <input class="check" type="checkbox" id="active" name="active" />
+        </div>
+
+    </div>
+    <div class="buttoncate"  >
+        <button class="btnadd" name="Submit" id="Submit" value="Save Data">
+            Update CATEGORY
+        </button>
+    </div>
+</form>

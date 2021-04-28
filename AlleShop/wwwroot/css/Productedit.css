@@ -1,0 +1,86 @@
+﻿@media only screen and (max-width:1366px){
+    .namepro{
+        margin-top:30px;
+        margin-left:80px;
+    }
+    .namepros {
+        font-stretch: ultra-condensed;
+        font-size: 20px;
+        font-weight: 100;
+        color: #a5a5a5;
+        margin-left:65px;
+    }
+    .inputpro {
+        width: 250px;
+        height: 30px;
+        border-top-style: hidden;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        border-bottom: 1px solid #a5a5a5;
+        outline: none;
+        font-stretch: ultra-condensed;
+        font-weight: 100;
+        margin-bottom:10px;
+    }
+    .checkproedit{
+        margin-top:20px;
+        margin-left:120px;
+        width:15px;
+        height:15px;
+    }
+    .proedit{
+        margin-top:-470px;
+        margin-left:540px;
+
+    }
+    .uploadpro {
+        margin-top: 10px;
+        cursor: pointer;
+        margin-left: 70px;
+        border: 1px solid #a5a5a5;
+        width: 120px;
+        height: 30px;
+        text-align: center;
+        border-radius: 10px;
+        transition: background-color 0.5s;
+        border: 1px solid #a5a5a5;
+        transition: background-color 0.5s;
+    }
+    .uploadpro:hover {
+        background-color: #a5a5a5;
+        color: white;
+    }
+    .buttonproedit {
+        margin-top: 60px;
+        margin-left: 570px;
+    }
+
+    .btnaddproedits {
+        width: 200px;
+        height: 35px;
+        background-color: white;
+        color: black;
+        border: 1px solid #a5a5a5;
+        border-radius: 20px;
+        font-stretch: ultra-condensed;
+        font-size: 15px;
+        font-weight: 100;
+        transition: background-color 0.5s;
+    }
+
+        .btnaddproedits:hover {
+            background-color: #a5a5a5;
+            color: white;
+        }
+    .backpro {
+        margin-left: 850px;
+    }
+
+    .btnbackbro {
+        color: grey;
+    }
+
+        .btnbackbro:hover {
+            color: black;
+        }
+}

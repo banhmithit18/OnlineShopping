@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "UserInformation";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+
+    $(document).ready(function () {
+
+        $.ajax({
+            type: 'GET',
+            contentType: "application/json; charset = utf8",
+            url: 'http://localhost:8085/api/UserInfors',
+            dataType: 'json',
+            success: function (data) {
+               
+                $.each(data, function (i, item) {
+                    var rows = "<tr>" +
+                        "<td id='FullName'>" + item.fullName + "</td>" +
+                        "<td id='Age'>" + item.age + "</td>" +
+                        "<td id='Gender'>" + item.gender + "</td>" +
+                        "<td id='Email'>" + item.email + "</td>" +
+                        "<td id='Phone'>" + item.phone + "</td>" +
+                        "<td id='Addressone'>" + item.address1 + "</td>" +
+                        "<td id='Addresstwo'>" + item.address2 + "</td>" +
+                        "<td id='SpentAmount'>" + item.spentAmount + "</td>" +
+                        "<td id='ViprankID'>" + item.vipRankID + "</td>" +
+
+
+                        + ''
+ +'<td>'
+                        + '<a class="iconone" id="' + item.userInfoID + '" href="Useredit/'+item.userInfoID + '" >'
++ '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">'
++ '<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />'
++ '<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />'
+ +'</svg>'
++ '</a>'
++ ''
++ ''
++ '</td>'
+
+                        + '</tr>'
+
+                    $('#listuser').append(rows);
+
+                })
+
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
+    });
+
+</script>
+<div id="scrollbaruser">
+    <table class="table" id="listuser">
+        <thead>
+            <tr>
+                <th scope="col">Fullname</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address one</th>
+                <th scope="col">Address two</th>
+                <th scope="col">SpentAmount</th>
+                <th scope="col">ViprankID</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</div>
+
+

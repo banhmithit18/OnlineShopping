@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+
+    $(document).ready(function () {
+
+        $.ajax({
+            type: 'GET',
+            contentType: "application/ json; charset = utf8",
+            url: 'http://localhost:8085/api/Orders',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    var rows = "<tr>" +
+                        "<td id='OrderID'>" + item.orderID + "</td>" +
+                        "<td id='ProductName'>" + item.productName + "</td>" +
+                        "<td id='NameBrand'>" + item.brand + "</td>" +
+                        "<td id='Color'>" + item.color + "</td>" +
+                        "<td id='Size'>" + item.size + "</td>" +
+                        "<td id='Price'>" + item.price + "</td>" +
+                        "<td id='Quantity'>" + item.quantity + "</td>" +
+                        "<td id='OrderDate'>" + item.orderDate + "</td>" +
+                        "<td id='UserName'>" + item.customerName + "</td>" +
+                        "<td id='Phone'>" + item.customerPhone + "</td>" +
+                        "<td id='Total'>" + item.total + "</td>" +
+                        
+                        + '</tr>'
+
+                    $('#order').append(rows);
+
+
+                })
+
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
+    });
+
+</script>
+<div id="scrollbar">
+    <table class="table" id="order" name="order">
+        <thead>
+            <tr>
+                <th scope="col">OrderId</th>
+                <th scope="col">Nameproduct</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Color</th>
+                <th scope="col">Size</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">OrderDate</th>
+                <th scope="col">CusName</th>
+                <th scope="col">CusPhone</th>
+                <th scope="col">Total</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                                
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+

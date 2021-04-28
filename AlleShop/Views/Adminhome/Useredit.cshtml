@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewData["Title"] = "Useredit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        var url = window.location.pathname;
+        var id = url.substring(url.lastIndexOf('/') + 1);
+        $.ajax({
+
+            url: 'http://localhost:8085/api/UserInfors/' + id,
+            type: 'Get',
+            dataType: 'json',
+            contentType: "application/json; charset=utf8",
+            success: function (data) {
+                JSON.stringify(data);
+                document.getElementById('fullname').value = data.fullName;
+                document.getElementById('age').value = data.age;
+                document.getElementById('email').value = data.email;
+                document.getElementById('phone').value = data.phone;
+                document.getElementById('address1').value = data.address1;
+                document.getElementById('address2').value = data.address2;
+                document.getElementById('spentamount').value = data.spentAmount;
+                document.getElementById('vipid').value = data.vipRankID;
+                document.getElementById('userid').value = data.userID;
+
+
+
+
+            },
+            error: function (data) {
+                
+                alert('error');
+
+            }
+        });
+        $('#btnupdateuser').click(function () {
+
+            var Useredit = new Object();
+
+            Useredit.ID = id;
+            Useredit.FullName = $('#fullname').val();
+            Useredit.Age = $('#age').val();
+
+            Useredit.Email = $('#mail').val();
+            Useredit.Phone = $('#phone').val();
+            Useredit.Address1 = $('#address1').val();
+            Useredit.Address2 = $('#address2').val();
+            Useredit.SpentAmount = $('#spentamount').val();
+            Useredit.VIPrankID = $('#vipid').val();
+            Useredit.UserID = $('#userid').val();
+            Useredit.vipRanks = null;
+            Useredit.users = null;
+
+            /*Category.Active = $('#active').click(1);*/
+            //Category.active = $('#active').click(true);//
+
+
+
+
+            var x = JSON.stringify(Useredit);
+            
+            $.ajax({
+
+                url: 'http://localhost:8085/api/UserInfors/' + id,
+                type: 'PUT',
+                dataType: 'json',
+                contentType: "application/json; charset=utf8",
+                data: x,
+                success: function (data) {
+                    alert('sucsses');
+                },
+                error: function (data) {
+                    alert('error');
+
+                }
+            });
+        });
+    });
+</script>
+<div class="nameuser">
+    <div class="useredit">
+        Fullname
+    </div>
+    <input class="inputedit" type="text" id="fullname" name="fullname" />
+</div>
+<div class="nameuser">
+    <div class="useredit">
+        Age
+    </div>
+    <input class="inputedit" type="text" id="age" name="age" />
+</div>
+<div class="nameuser">
+    <div class="useredit">
+        Email
+    </div>
+    <input class="inputedit" type="text" id="email" name="email" />
+</div>
+<div class="nameuser">
+    <div class="useredit">
+        Phonenumber
+    </div>
+    <input class="inputedit" type="text" id="phone" name="phone" />
+</div>
+<div class="nameuser">
+    <div class="useredit">
+        RankvipID
+    </div>
+    <input class="inputedit" type="text" id="vipid" name="vipid" />
+</div>
+<div class="nameusers">
+    <div class="useredit">
+        Gender
+    </div>
+
+    <select name="gender" id="genders">
+        <option value="" disabled selected hidden>Gender</option>
+        <option id="custom" value="Female">Male</option>
+        <option id="custom" value="Male">Female</option>
+    </select>
+</div>
+<div class="nameaddress">
+    <div class="useredit">
+        Address one
+    </div>
+    <input class="inputedit" type="text" id="address1" name="address1" />
+</div>
+<div class="nameaddress">
+    <div class="useredit">
+        Address two
+    </div>
+    <input class="inputedit" type="text" id="address2" name="address2" />
+</div>
+<div class="nameamount">
+    <div class="useredit">
+        SpentAmount
+    </div>
+    <input class="inputedit" type="text" id="spentamount" name="spentamount" />
+</div>
+<div class="nameamount">
+        <div class="useredit">
+            UserID
+        </div>
+        <input class="inputedit" type="text" id="userid" name="userid" />
+    </div>
+<div class="buttonuseredit">
+    <button class="btnuser" id="btnupdateuser">
+        Update User
+    </button>
+</div>
+
+
+

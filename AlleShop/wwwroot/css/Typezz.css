@@ -1,0 +1,97 @@
+﻿.nametype {
+    margin-top: 250px;
+    margin-left: 400px;
+}
+
+.inputtype {
+    width: 300px;
+    height: 30px;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom: 1px solid #a5a5a5;
+    outline: none;
+    font-stretch: ultra-condensed;
+    font-weight: 100;
+}
+
+.texttype {
+    margin-left: 90px;
+    margin-bottom: 5px;
+    font-stretch: ultra-condensed;
+    font-size: 20px;
+    font-weight: 100;
+    color: #a5a5a5;
+}
+
+.texttypes {
+    margin-left: 103px;
+    margin-bottom: 5px;
+    font-stretch: ultra-condensed;
+    font-size: 20px;
+    font-weight: 100;
+    color: #a5a5a5;
+}
+
+.checkboxtype {
+    margin-top: 40px;
+    margin-left: 440px;
+}
+
+.checktype {
+    width: 20px;
+    height: 20px;
+    margin-left: 105px;
+}
+
+.buttontype {
+    margin-left: 450px;
+    margin-top: 30px;
+}
+
+.btntype {
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #a5a5a5;
+    color: black;
+    font-stretch: ultra-condensed;
+    font-weight: lighter;
+    font-size: 15px;
+    transition: background-color 0.5s;
+}
+
+    .btntype:hover {
+        color: white;
+        background-color: #a5a5a5;
+        border: 1px solid black;
+    }
+@media only screen and (max-width:1366px){
+    .nametype {
+        margin-top: 169px;
+        margin-left: 301px;
+    }
+    .checkboxtype {
+        margin-top: 38px;
+        margin-left: 330px;
+    }
+    .buttontype {
+        margin-left: 347px;
+        margin-top: 43px;
+    }
+    .edittype {
+        margin-top: 20px;
+        margin-left: 435px;
+    }
+
+    .editstype {
+        color: #a5a5a5;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .editstype:hover {
+            color: black;
+        }
+}

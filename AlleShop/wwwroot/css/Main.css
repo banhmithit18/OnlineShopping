@@ -1,0 +1,13 @@
+﻿body {
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1366px) {
+    body {
+        background-image: url(../images/backgroundz.jpg);
+        background-repeat: no-repeat;
+    }
+}
+
+
