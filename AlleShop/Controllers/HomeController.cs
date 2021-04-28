@@ -38,6 +38,7 @@ namespace AlleShop.Controllers
         {
             return View();
         }
+        
 
         public IActionResult Privacy()
         {
