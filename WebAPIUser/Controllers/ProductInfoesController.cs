@@ -21,10 +21,10 @@ namespace WebAPIUser.Controllers
         }
 
         // GET: api/ProductInfoes
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductInfo>>> GetProductInfos(int ProductID)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<ProductInfo>>> GetProductInfos(int id)
         {
-            return await _context.ProductInfos.Where(a=>a.ProductID == ProductID).ToListAsync();
+            return await _context.ProductInfos.Where(a=>a.ProductID == id).ToListAsync();
         }
 
         

@@ -14,6 +14,9 @@ body {
 }
 /*header*/
 
+
+
+
 header {
     position: fixed;
     display: flex;
@@ -106,7 +109,7 @@ header {
     height: 35px;
     background-color: #fff;
     z-index: 100000;
-    position: sticky;
+    position:absolute;
     overflow:hidden;
     width: 100%;
     top: 0;
@@ -242,11 +245,16 @@ img.placement-icon {
 
 .btn_shop {
     position: relative;
-    justify-content: center;
-    align-items: center;
+    padding-top: 15px;
     width: 200px;
     height: 60px;
+    
+    text-decoration:none !important ;
+    text-align: center;
+    
+    justify-content:center;
     color: #fff;
+    font-size:15px;
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
     background-color: transparent;
@@ -255,6 +263,7 @@ img.placement-icon {
     .btn_shop:hover {
         background-color: #202020;
         border: #202020;
+        text-decoration: none!important ;
         box-shadow: inset;
     }
 
@@ -290,6 +299,7 @@ img.placement-icon {
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    margin-left: -60px;
 }
 
     .dropdown-content a {
@@ -300,18 +310,19 @@ img.placement-icon {
         top:0;
         text-decoration: none;
         display: block;
+        text-align:center;
     }
 
         .dropdown-content a:hover {
-            
             background-color: #ddd;
-            transition:0.2s;
+            transition: 0.2s;
+            color: white;
         }
 
 .dropdown:hover .dropdown-content {
     display: block;
- 
 }
+
 a:hover{
     color:#ddd;
     transition:0.2s;

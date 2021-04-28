@@ -2,14 +2,13 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-
-
 @{ Layout = "_layoutMain";
 }
 <style>
     .container {
         max-width: 1500px;
     }
+
     .product {
         position: relative;
         float: left;
@@ -78,14 +77,14 @@
             font-size: 22px;
         }
 
-    label {
-        display: block;
-        margin-top: 5px;
-        font-weight: 400;
-        font-size: 20px;
-    }
+        .details label {
+            display: block;
+            margin-top: 5px;
+            font-weight: 400;
+            font-size: 20px;
+        }
 
-    ul {
+    .details ul {
         display: flex;
         margin: 0;
         padding: 0;
@@ -181,144 +180,129 @@
         padding: 0 20px;
     }
 
+    .sort {
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding: 10px;
+    }
+    .bi-search::before {
+        content: "\f52a";
+        font-size: 20px;
+        color: black;
+    }
+    #mySearch {
+        box-sizing: border-box;
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        height: 40px;
+        padding: 5px;
+    }
+
+
+        #mySearch:focus {
+            outline: 3px solid #ddd;
+        }
+
+    .search-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .search-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        overflow: auto;
+        z-index: 1;
+        left: -10px;
+        top: -10px;
+        border: 1px solid darkgrey;
+    }
+
+        .search-dropdown-content input {
+            border: none;
+            width: 100%;
+            overflow: visible;
+            height: 40px;
+            padding: 5px;
+            outline: none;
+        }
+
+    .search-dropdown:hover .search-dropdown-content {
+        display: block;
+    }
+
+
+    .sort-content {
+        position: relative;
+        padding: 10px;
+    }
 </style>
 
 
 @* information product*@
 <div class="breadcrumbs">
     <ul>
-        <li><a href="#"> Home </a></li>
-        <li style="color: black"><a href="#"> Product  </a></li>
+        <li><a href="../Home/Index"> Home </a></li>
+        <li style="color: black"><a href="../Product/Index"> Product  </a></li>
     </ul>
 </div>
-<div class="product-grid">
-    <div class="product">
-        <div class="imgbox">
-            <img src="../img/gucci-shirt-white.png" />
-        </div>
-        <div class="details">
-            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
-            <div class="price"> $999</div>
-            <label> Sizes </label>
-            <ul>
-                <li><span> S </span></li>
-                <li><span> M </span></li>
-                <li><span> L </span></li>
-            </ul>
-            <label> Colors </label>
-            <div class="color-wrap">
-                <ul class="colors">
-                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
-                    <li data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
-                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
-                </ul>
+<div class="sort">
+    <div class="sort-content">
+        <label> Brand :</label>
+        <select id="sort-brand" style=" border:none;">
+            <option>All</option>
+
+
+        </select>
+    </div>
+    <div class="sort-content">
+        <label> Price :</label>
+        <select id="sort-price" style=" border:none;">
+            <option>All</option>
+            <option>0$ - 100$</option>
+            <option>100$ - 500$</option>
+            <option>500$ -10004</option>
+        </select>
+    </div>
+    <div class="sort-content">
+        <label> Category :</label>
+        <select id="sort-category" style=" border:none;">
+            <option>All</option>
+
+
+        </select>
+    </div>
+    <div class="sort-content">
+        <label> Type :</label>
+        <select id="sort-type" style=" border:none;">
+            <option>All</option>
+
+        </select>
+    </div>
+    <div class="sort-content">
+        <div class="search-dropdown">
+            <a href="#"> <i class="bi bi-search"></i> </a>
+            <div class="search-dropdown-content">
+                <input type="text" placeholder="Search.." id="mySearch">
             </div>
-            @* button add to cart  *@
-            <a href="#"> Add To Cart </a>
         </div>
     </div>
-    <div class=" product">
-        <div class="imgbox">
-            <img src="../img/gucci-shirt-white.png" />
-        </div>
-        <div class="details">
-            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
-            <div class="price"> $999</div>
-            <label> Sizes </label>
-            <ul>
-                <li><span> S </span></li>
-                <li><span> M </span></li>
-                <li><span> L </span></li>
-            </ul>
-            <label> Colors </label>
-            <div class="color-wrap">
-                <ul class="colors">
-                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
-                    <li data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
-                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
-                </ul>
-            </div>
-            @* button add to cart  *@
-            <a href="#"> Add To Cart </a>
-        </div>
-    </div>
-    <div class=" product">
-        <div class="imgbox">
-            <img src="../img/gucci-shirt-white.png" />
-        </div>
-        <div class="details">
-            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
-            <div class="price"> $999</div>
-            <label> Sizes </label>
-            <ul>
-                <li><span> S </span></li>
-                <li><span> M </span></li>
-                <li><span> L </span></li>
-            </ul>
-            <label> Colors </label>
-            <div class="color-wrap">
-                <ul class="colors">
-                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
-                    <li class="active" data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
-                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
-                </ul>
-            </div>
-            @* button add to cart  *@
-            <a href="#"> Add To Cart </a>
-        </div>
-    </div>
-    <div class=" product">
-        <div class="imgbox">
-            <img src="../img/gucci-shirt-white.png" />
-        </div>
-        <div class="details">
-            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
-            <div class="price"> $999</div>
-            <label> Sizes </label>
-            <ul>
-                <li><span> S </span></li>
-                <li><span> M </span></li>
-                <li><span> L </span></li>
-            </ul>
-            <label> Colors </label>
-            <div class="color-wrap">
-                <ul class="colors">
-                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
-                    <li class="active" data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
-                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
-                </ul>
-            </div>
-            @* button add to cart  *@
-            <a href="#"> Add To Cart </a>
-        </div>
-    </div>
-    <div class=" product">
-        <div class="imgbox">
-            <img src="../img/gucci-shirt-white.png" />
-        </div>
-        <div class="details">
-            <h2> Gucci <br /><span> Men's Design T-shirt </span> </h2>
-            <div class="price"> $999</div>
-            <label> Sizes </label>
-            <ul>
-                <li><span> S </span></li>
-                <li><span> M </span></li>
-                <li><span> L </span></li>
-            </ul>
-            <label> Colors </label>
-            <div class="color-wrap">
-                <ul class="colors">
-                    <li data-color="#FF0000" data-src="../img/gucci-shirt-red.png"></li>
-                    <li class="active" data-color="#FFF" data-src="../img/gucci-shirt-white.png"></li>
-                    <li data-color="#000000" data-src="../img/gucci-shirt-black.png"></li>
-                </ul>
-            </div>
-            @* button add to cart  *@
-            <a href="#"> Add To Cart </a>
-        </div>
-    </div>
+    
+
 </div>
-<div id="1"></div>
+<div class="product-grid">
+
+
+</div>
 
 <script></script>
 
