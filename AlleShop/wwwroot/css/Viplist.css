@@ -1,0 +1,54 @@
+﻿.table {
+    font-stretch: ultra-condensed;
+    font-weight: 100;
+}
+
+    .table th {
+        color: darkgrey;
+        text-align: center;
+    }
+
+.img {
+    width: 80px;
+    height: 50px;
+}
+
+.table td {
+    text-align: center;
+}
+
+.iconone {
+    color: #a5a5a5;
+}
+
+    .iconone:hover {
+        color: black;
+    }
+
+#scrollbarvip {
+    overflow-y: scroll;
+    height: 846px;
+}
+.btnback {
+    color: grey;
+}
+
+    .btnback:hover {
+        color: black;
+    }
+@media only screen and (max-width:1366px) {
+    #scrollbarvip {
+        height: 568px;
+    }
+    .back{
+        margin-left:850px;
+        
+
+    }
+    .btnback {
+        color: grey;
+    }
+    .btnback:hover{
+        color:black;
+    }
+}

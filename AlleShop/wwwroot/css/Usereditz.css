@@ -1,0 +1,70 @@
+﻿@media only screen and (max-width:1366px){
+    .nameuser {
+        margin-top: 28px;
+        margin-left: 50px;
+    }
+    .useredit {
+        font-stretch: ultra-condensed;
+        font-size: 20px;
+        font-weight: 100;
+        color: #a5a5a5;
+        margin-left: 85px;
+    }
+    .inputedit {
+        width: 250px;
+        height: 30px;
+        border-top-style: hidden;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        border-bottom: 1px solid #a5a5a5;
+        outline: none;
+        font-stretch: ultra-condensed;
+        font-weight: 100;
+        margin-bottom: 1px;
+    }
+    .nameusers {
+        margin-top: -419px;
+        margin-left: 520px;
+    }
+    #genders {
+        border-top-style: hidden;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        border-bottom: 1px solid #a5a5a5;
+        outline: none;
+        font-stretch: ultra-condensed;
+        font-size: 15px;
+        font-weight: 100;
+        margin-left:90px;
+        color:grey;
+    }
+    .nameaddress {
+        margin-top: 34px;
+        margin-left: 500px;
+    }
+    .nameamount {
+        margin-top: 25px;
+        margin-left: 500px;
+    }
+    .buttonuseredit {
+        margin-top: 60px;
+        margin-left: 309px;
+    }
+    .btnuser {
+        width: 200px;
+        height: 35px;
+        background-color: white;
+        color: black;
+        border: 1px solid #a5a5a5;
+        border-radius: 20px;
+        font-stretch: ultra-condensed;
+        font-size: 15px;
+        font-weight: 100;
+        transition: background-color 0.5s;
+    }
+
+        .btnuser:hover {
+            background-color: #a5a5a5;
+            color: white;
+        }
+}

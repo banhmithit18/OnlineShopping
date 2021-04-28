@@ -1,0 +1,112 @@
+﻿.namebrand {
+    margin-top: 250px;
+    margin-left: 400px;
+}
+
+.inputbrand {
+    width: 300px;
+    height: 30px;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom: 1px solid #a5a5a5;
+    outline: none;
+    font-stretch: ultra-condensed;
+    font-weight: 100;
+}
+
+.textbrand {
+    margin-left: 90px;
+    margin-bottom: 5px;
+    font-stretch: ultra-condensed;
+    font-size: 20px;
+    font-weight: 100;
+    color: #a5a5a5;
+}
+.textbrands {
+    margin-left: 103px;
+    margin-bottom: 5px;
+    font-stretch: ultra-condensed;
+    font-size: 20px;
+    font-weight: 100;
+    color: #a5a5a5;
+}
+.checkboxbrand {
+    margin-top: 40px;
+    margin-left: 440px;
+}
+
+.check {
+    width: 20px;
+    height: 20px;
+    margin-left: 105px;
+}
+
+.buttonbrand {
+    margin-left: 450px;
+    margin-top: 30px;
+}
+
+.btnbrand {
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #a5a5a5;
+    color: black;
+    font-stretch: ultra-condensed;
+    font-weight: lighter;
+    font-size: 15px;
+    transition: background-color 0.5s;
+}
+
+    .btnbrand:hover {
+        color: white;
+        background-color: #a5a5a5;
+        border: 1px solid black;
+    }
+.editbrand {
+    margin-top: 20px;
+    margin-left: 435px;
+}
+
+.editsbrand {
+    color: #a5a5a5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .editsbrand:hover {
+        color: black;
+    }
+@media only screen and (max-width:1366px) {
+    .namebrand {
+        margin-top: 169px;
+        margin-left: 301px;
+    }
+    .checkboxbrand {
+        margin-top: 38px;
+        margin-left: 330px;
+    }
+    .Checkbox {
+        margin-top: -11px;
+    }
+    .buttonbrand {
+        margin-left: 347px;
+        margin-top: 43px;
+    }
+    .editbrand {
+        margin-top: 20px;
+        margin-left: 435px;
+    }
+
+    .editsbrand {
+        color: #a5a5a5;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .editsbrand:hover {
+            color: black;
+        }
+}

@@ -1,0 +1,162 @@
+﻿
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#addpro').click(function () {
+            var Addpro = new Object();
+            var checkbox = document.getElementById("active");
+            Addpro.ProductName = $('#namepr').val();
+            Addpro.Price = $('#pricepr').val();
+            Addpro.Descriptions = $('#desc').val();
+            Addpro.ProductUpdateDate = Date.now();
+            Addpro.BrandID = $('#idbrand').val();
+            Addpro.TypeID = $('#idtype').val();
+            Addpro.ProductImage = $('#image').val();
+
+            Addpro.Active = null;
+           
+            if (checkbox.checked) {
+                Addpro.Active = true;
+            } else {
+                Addpro.Active = false;
+            };
+            var x = JSON.stringify(Addpro);
+
+            alert(x);
+            $.ajax({
+                url: 'http://localhost:8085/api/Products',
+                type: 'POST',
+                data: x,
+                contentType: "application/json; charset=utf8",
+                dataType: 'json',
+                success: function (data) {
+
+                    alert("Success");
+
+                },
+                error: function (data) {
+                    alert("error");
+                }
+            })
+        })
+    })
+
+
+
+
+
+
+
+
+</script>
+<form >
+    <div class="nameproduct">
+        <div class="textpr">
+            Name
+        </div>
+        <input class="input" type="text" id="namepr" name="namepr" />
+    </div>
+    <div class="priceproduct">
+        <div class="textpr">
+            Price
+        </div>
+        <input class="input" type="text" id="pricepr" name="pricepr" />
+    </div>
+    <div class="brandproduct">
+        <div class="textpr">
+            Brand
+        </div>
+        <select name="brandpr" id="brandpr">
+            <option value="" disabled selected hidden>Select brand</option>
+
+        </select>
+    </div>
+    <div class="typeproduct">
+        <div class="textpr">
+            Type
+        </div>
+        <select name="typepr" id="typepr">
+            <option value="" disabled selected hidden>Select Type</option>
+
+        </select>
+        <script>
+            var brand = [];
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8085/api/brands",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var data;
+                    //alert(JSON.stringify(data));
+                    $.each(data, function (y, item2) {
+                        brand.push(item2.nameBrand)
+                        var idbrand = brand.push(item2.ID);
+                    })
+                    for (var index = 0; index < brand.length; index++) {
+                        data = data + '<option>' + brand[index] + '</option>';
+                    }
+                    $("#brandpr").append(data);
+                    brand = [];
+                }
+            });
+        </script>
+        <script>
+            var Types = [];
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8085/api/Types",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var data;
+                    //alert(JSON.stringify(data));
+                    $.each(data, function (y, item2) {
+                        Types.push(item2.typeName)
+                        var idtype = Types.push(item2.TypeID);
+                    })
+                    for (var index = 0; index < Types.length; index++) {
+                        data = data + '<option>' + Types[index] + '</option>';
+                    }
+                    $("#typepr").append(data);
+                    Types = [];
+                }
+            });
+        </script>
+
+    </div>
+    
+    <div class="activeproduct">
+        <div class="textpr">
+            Active
+        </div>
+        <input class="inputs" type="checkbox" name="activepr" />
+    </div>
+    <div class="logo">
+        <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
+        <p><img id="output" width="200" height="200" /></p>
+        <p><label class="upload" for="file" style="">Upload Image</label></p>
+    </div>
+
+    <div class="description">
+        <textarea placeholder="Description" class="des" id="desc" name="desc">
+    </textarea>
+    </div>
+    <div class="buttonpro">
+        <button class="btnaddpro" id="addpro" name="addpro">
+            Add Product
+        </button>
+    </div>
+</form>
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+</script>
+

@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "Viplist";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+
+    $(document).ready(function () {
+
+        $.ajax({
+            type: 'GET',
+            contentType: "application/ json; charset = utf8",
+            url: 'http://localhost:8085/api/Vipranks',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    var rows = "<tr>" +
+                        "<td id='VipName'>" + item.vipName + "</td>" +
+                        "<td id='PriceDiscount'>" + item.discountPrice + "</td>" +
+                        "<td id='Amount'>" + item.amount + "</td>" +
+                        "<td id='Active'>" + item.active + "</td>" +
+
+                        '<td>'
+                        + '<a class="iconone" id="' + item.id + '" href="Vipedit/'+item.id + '" >'
+                        + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">'
+                        + '<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />'
+                        + '<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />'
+                        + '</td>'
+                        + '</tr>'
+
+                    $('#viplist').append(rows);
+
+
+                })
+
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
+    });
+
+</script>
+<div id="scrollbarvip">
+    <div class="back">
+        <a class="btnback" href="@Url.Action("Viprank")">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+            </svg>
+        </a>
+    </div>
+    <table class="table" id="viplist" name="viplist">
+        <thead>
+            <tr>
+                <th scope="col">VipName</th>
+                <th scope="col">PriceDiscount</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Active</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+</div>
+

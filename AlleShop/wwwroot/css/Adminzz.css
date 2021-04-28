@@ -1,0 +1,153 @@
+﻿body {
+    background-image: url(../images/imgadmin.jpg);
+    background-repeat: no-repeat;
+}
+#main {
+    width: 1500px;
+    height: 850px;
+    background-color: white;
+    margin-top: 40px;
+    margin-left: -110px;
+    border-radius: 20px;
+    border: 2px solid #a5a5a5;
+}
+#scroll {
+    border-right: 2px solid #a5a5a5;
+    border-radius: 20px;
+    height: 850px;
+}
+.Title {
+    font-stretch: ultra-condensed;
+    font-size: 60px;
+    font-weight: 100;
+    color: #a5a5a5;
+    margin-left: 110px;
+    margin-top: 30px;
+}
+.menuone {
+    width: 360px;
+    height: 518px;
+}
+
+.menubar {
+    margin-top: 62px;
+    text-align: center;
+}
+
+.button {
+    text-decoration: none;
+    margin-top: 33px;
+    font-stretch: ultra-condensed;
+    font-size: 22px;
+    font-weight: 100;
+    color: #a5a5a5;
+}
+
+.btn-content {
+    width: 372px;
+    height: 32px;
+    margin-left: -12px;
+    transition: background-color 0.5s;
+    margin-bottom: 24px;
+}
+.btn-content:hover {
+    background-color: #a5a5a5;
+    color: white;
+}
+.iconsetting {
+    color: #a5a5a5;
+    margin-top: -55px;
+    margin-left: 155px;
+    transition: background-color 0.5s;
+}
+
+    .iconsetting:hover {
+        color: black;
+    }
+@media only screen and (max-width: 1366px) {
+    body {
+        background-image: url(../images/imgadminz.jpg);
+        background-repeat: no-repeat;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    #main {
+        width: 1250px;
+        height: 572px;
+        background-color: white;
+        margin-top: 42px;
+        margin-left: -70px;
+        border-radius: 20px;
+        border: 2px solid #a5a5a5;
+    }
+}
+@media only screen and (max-width: 1366px) {
+
+    .menuone {
+        width: 297px;
+        height: 456px;
+    }
+
+}
+@media only screen and (max-width: 1366px) {
+
+    .menubar {
+        margin-top: 40px;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    #scroll {
+        border-right: 2px solid #a5a5a5;
+        border-radius: 20px;
+        height: 573px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .Title {
+        font-stretch: ultra-condensed;
+        font-size: 35px;
+        font-weight: 100;
+        color: #a5a5a5;
+        margin-left: 97px;
+        margin-top: 23px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .button {
+        text-decoration: none;
+        margin-top: 33px;
+        font-stretch: ultra-condensed;
+        font-size: 18px;
+        font-weight: 100;
+        color: #a5a5a5;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .btn-content {
+        width: 309px;
+        height: 32px;
+        margin-left: -17px;
+        transition: background-color 0.5s;
+        margin-bottom: 9px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+    .iconsetting {
+        color: #a5a5a5;
+        margin-top: -49px;
+        margin-left: 124px;
+        transition: background-color 0.5s;
+        width: 100px;
+    }
+}
+
+   
+
+   
+
+  
+
+    
+
+    

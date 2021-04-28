@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Feedback";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+
+    $(document).ready(function () {
+
+        $.ajax({
+            type: 'GET',
+            contentType: "application/ json; charset = utf8",
+            url: 'http://localhost:8085/api/Feedbacks',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    var rows = "<tr>" +
+                        "<td id='Subject'>" + item.subject + "</td>" +
+                        "<td id='Message'>" + item.message + "</td>" +
+                        "<td id='Name'>" + item.name + "</td>" +
+                        "<td id='ContactNumber'>" + item.contactNumber + "</td>" +
+                        "<td id='Email'>" + item.email + "</td>" +
+                        "<td id='receivedDate'>" + item.receivedDate + "</td>" +
+                        "<td id='status'>" + item.status + "</td>" +
+                  
+
+                        + '</tr>'
+
+                    $('#feedback').append(rows);
+
+
+                })
+
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
+    });
+
+</script>
+<div id="scrollbarfeed">
+    <table class="table" id="feedback" name="feedback">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Message</th>
+                <th scope="col">Contacnumber</th>
+                <th scope="col">Email</th>
+                <th scope="col">ReceivedDate </th>
+                <th scope="col">Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

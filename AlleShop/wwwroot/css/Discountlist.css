@@ -1,0 +1,59 @@
+﻿.table {
+    font-stretch: ultra-condensed;
+    font-weight: 100;
+}
+
+    .table th {
+        color: darkgrey;
+        text-align: center;
+    }
+
+.img {
+    width: 80px;
+    height: 50px;
+}
+
+.table td {
+    text-align: center;
+}
+
+.iconone {
+    color: #a5a5a5;
+}
+
+    .iconone:hover {
+        color: black;
+    }
+
+#scrollbardis {
+    overflow-y: scroll;
+    height: 846px;
+}
+.backdis {
+    margin-left: 850px;
+}
+.btnbackdis {
+    color: grey;
+}
+
+.btnbackdis:hover {
+    color: black;
+}
+
+@media only screen and (max-width:1366px) {
+    #scrollbardis {
+        height: 568px;
+    }
+
+    .backdis {
+        margin-left: 850px;
+    }
+
+    .btnbackdis {
+        color: grey;
+    }
+
+        .btnbackdis:hover {
+            color: black;
+        }
+}

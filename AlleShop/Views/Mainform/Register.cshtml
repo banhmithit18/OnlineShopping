@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layoutmain.cshtml";
+}
+<link href="~/css/Register.css" rel="stylesheet" />
+<div class="container">
+    <div class="row" id="main">
+        <div class="menu">
+            <div class="title">
+                A l l e
+            </div>
+        </div>
+
+        <div class="inputone">
+            <div class="textone">
+                Fullname
+            </div>
+            <input class="inputs" type="text" name="fullname" />
+            <div class="textone">
+                Username
+            </div>
+            <input class="inputs" type="text" name="username" />
+            <div class="textage">
+                Age
+            </div>
+            <input class="inputs" type="text" maxlength="2" size="2" onkeypress='setnumbers(event)' name=" age" />
+            <div class="textphonenumber">
+                Phone number
+            </div>
+            <input class="inputs" type="text" onkeypress='setnumber(event)' name="phone"maxlength="11" size="11"  />
+            <div class="textgender">
+                Gender
+            </div>
+
+            <select name="gender" id="gender">
+                <option value="" disabled selected hidden>Gender</option>
+                <option id="custom" value="Female">Male</option>
+                <option id="custom" value="Male">Female</option>
+            </select>
+        </div>
+
+        <div class="inputtwo">
+            <div class="textmail">
+                Email
+            </div>
+            <input class="inputs" type="text" name="email" />
+            <div class="texadd1">
+                Address line 1
+            </div>
+            <input class="inputs" type="text" name="address1" />
+            <div class="textadd2">
+                Address line 2
+            </div>
+            <input class="inputs" type="text" name="address2" />
+            <div class="textpassword">
+                Password
+            </div>
+            <input class="inputs" type="text" name="password" />
+            <div class="textconfirm">
+                Confirm Password
+            </div>
+            <input class="inputcorfirm" type="text" name="passconfirm" />
+        </div>
+        <a class="button" href="@Url.Action("")">
+            <div class="buttonsigin">
+                Sign in
+            </div>
+        </a>
+        <div class="line1">
+            <hr class="lineone" />
+        </div>
+        <div class="Or">
+            OR
+        </div>
+        <div class="line2">
+            <hr class="linetwo" />
+        </div>
+        <div class="signintext">
+            Have an account?
+        </div>
+        <div class="sigins">
+            <a class="textsigin" href="@Url.Action("Login")">Log in</a>
+        </div>
+    </div>
+
+</div>
+<script>
+    function setnumber(evt) {
+        var theEvent = evt || window.event;
+        if (theEvent.type === 'paste') {
+            key = event.clipboardData.getData('text/plain');
+        } else {
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+        }
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+</script>
+<script>
+    function setnumbers(evt) {
+        var theEvent = evt || window.event;
+        if (theEvent.type === 'paste') {
+            key = event.clipboardData.getData('text/plain');
+        } else {
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+        }
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+</script>

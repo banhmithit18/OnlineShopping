@@ -3,19 +3,24 @@ var skip = 0;
 var wherethefuckiam = 0;
 var currentValue;
 var firstTime = true;
+
+
+$("#mySearch").on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+        var value = $('#mySearch').val();
+
+        firstTime = true;
+        currentValue = value;
+        wherethefuckiam = 5;
+        skip = 0;
+        currentLocation = 0;
+        loadDataWhithSkip(skip, "search", value)
+    }
+});
+
+
 $(document).ready(function () {
-     $("#mySearch").on('keyup', function (e) {
-         if (e.key === 'Enter' || e.keyCode === 13) {
-             var value = $('#mySearch').val();
-           
-            firstTime = true;
-            currentValue = value;
-            wherethefuckiam = 5;
-            skip = 0;
-            currentLocation = 0;
-            loadDataWhithSkip(skip, "search", value)
-        }
-    });
+
     var brand = [];
     $.ajax({
         type: "GET",
@@ -72,11 +77,13 @@ $(document).ready(function () {
         }
     });
     loadData();
-  
+    
 });
 
 
-
+function mFunction(obj) {
+    alert(obj);
+     }
 
 $('#sort-brand').change(function () {
     
@@ -238,6 +245,7 @@ function loadDataWhithSkip(skip, field, value) {
             var size = [];
             var color = [];
             var img = [];
+            var productinfoid;
             //alert(JSON.stringify(data));
             $.each(data, function (i, item) {
 
@@ -254,7 +262,8 @@ function loadDataWhithSkip(skip, field, value) {
                         $.each(data, function (y, item2) {
                             size.push(item2.size);
                             color.push(item2.color);
-                            img.push(item2.productImage)
+                            img.push(item2.productImage);
+                            productinfoid = item2.id;
                         })
                     }
                 });
@@ -290,7 +299,7 @@ function loadDataWhithSkip(skip, field, value) {
                 data = data +
                     '</ul>' +
                     '</div>' +
-                    '<a href="#"> Add To Cart </a>' +
+                    '<a class="cart"  "id="' + productinfoid + '" onclick="mFunction("'+productinfoid+'");" > Add To Cart </a>' +
                     '</div>' +
                     '</div>';
 
@@ -352,6 +361,8 @@ function loadData() {
             var color = [];
             var img = [];
             var check = false;
+            var productinfoid;
+
             //alert(JSON.stringify(data));
             $.each(data, function (i, item) {
 
@@ -368,7 +379,8 @@ function loadData() {
                         $.each(data, function (y, item2) {
                             size.push(item2.size);
                             color.push(item2.color);
-                            img.push(item2.productImage)
+                            img.push(item2.productImage);
+                            productinfoid = item2.id;
                         })
                     }
                 });
@@ -406,10 +418,10 @@ function loadData() {
                 data = data +
                     '</ul>' +
                     '</div>' +
-                    '<a href="#"> Add To Cart </a>' +
+                    '<a class="cart"  "id="' + productinfoid + '" onclick="mFunction("'+productinfoid+'");" > Add To Cart </a>' +
                     '</div>' +
                     '</div>';
-                if (check == false) {
+                if (check == false) {this.id
                     $(".product-grid").html(data);
                     check = true;
                 }
@@ -448,4 +460,5 @@ function loadData() {
 
     });
 }
+
 
